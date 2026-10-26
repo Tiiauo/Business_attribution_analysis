@@ -1,0 +1,26 @@
+name: ba-m01-dev
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ba_app
+      POSTGRES_DB: ba_dev
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      TZ: Asia/Shanghai
+    ports:
+      - "127.0.0.1:15432:5432"
+    secrets:
+      - postgres_password
+    volumes:
+      - postgres_dev:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ba_app -d ba_dev"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  postgres_dev:
+secrets:
+  postgres_password:
+    file: .secrets/postgres.password

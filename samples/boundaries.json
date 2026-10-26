@@ -1,0 +1,48 @@
+{
+  "behavior": {
+    "visit_events": [
+      ["cross-v", "cross", "2026-09-07T23:59:00+08:00", "windows", "A"],
+      ["a-device-v", "device", "2026-09-08T10:00:00+08:00", "windows", "A"],
+      ["z-device-v", "device", "2026-09-08T10:00:00+08:00", "macos", "A"],
+      ["equal-v", "equal", "2026-09-08T10:00:00+08:00", "macos", "A"],
+      ["missing-v", "missing", "2026-09-08T10:00:00+08:00", "macos", "A"],
+      ["unpaid-v", "unpaid", "2026-09-08T10:00:00+08:00", "macos", "A"],
+      ["duplicate-v", "duplicate", "2026-09-08T10:00:00+08:00", "windows", "A"],
+      ["duplicate-v", "duplicate", "2026-09-08T10:00:00+08:00", "windows", "A"],
+      ["before-v", "before", "2026-09-08T10:00:00+08:00", "macos", "A"]
+    ],
+    "cart_events": [
+      ["cross-c", "cross", "2026-09-08T00:01:00+08:00", "windows", "p1"],
+      ["device-c", "device", "2026-09-08T11:00:00+08:00", "macos", "p1"],
+      ["equal-c", "equal", "2026-09-08T10:00:00+08:00", "macos", "p1"],
+      ["unpaid-c", "unpaid", "2026-09-08T11:00:00+08:00", "macos", "p1"],
+      ["duplicate-c", "duplicate", "2026-09-08T11:00:00+08:00", "windows", "p1"],
+      ["duplicate-c", "duplicate", "2026-09-08T11:00:00+08:00", "windows", "p1"],
+      ["before-c", "before", "2026-09-08T09:00:00+08:00", "macos", "p1"]
+    ],
+    "order_events": [
+      ["cross-o", "cross", "2026-09-08T00:02:00+08:00", "windows", "cross", "100.00", "paid"],
+      ["device-o", "device", "2026-09-08T12:00:00+08:00", "macos", "device", "100.00", "completed"],
+      ["equal-o", "equal", "2026-09-08T11:00:00+08:00", "macos", "equal", "100.00", "paid"],
+      ["missing-o", "missing", "2026-09-08T12:00:00+08:00", "macos", "missing", "100.00", "paid"],
+      ["no-visit-o", "no-visit", "2026-09-08T12:00:00+08:00", "windows", "no-visit", "100.00", "paid"],
+      ["unpaid-o", "unpaid", "2026-09-08T12:00:00+08:00", "macos", "unpaid", "100.00", "unpaid"],
+      ["duplicate-o", "duplicate", "2026-09-08T12:00:00+08:00", "windows", "duplicate", "100.00", "paid"],
+      ["duplicate-o", "duplicate", "2026-09-08T12:00:00+08:00", "windows", "duplicate", "100.00", "paid"],
+      ["before-o", "before", "2026-09-08T11:00:00+08:00", "macos", "before", "100.00", "paid"]
+    ],
+    "expected": [["base", "windows", 1, 0, 0], ["current", "macos", 4, 1, 0], ["current", "windows", 2, 2, 2]]
+  },
+  "market": {
+    "orders": [
+      ["cross-paid", "u1", "2026-09-07T12:00:00+08:00", "2026-09-08T12:00:00+08:00", "paid", "B", "100.00", "CNY"],
+      ["unpaid", "u2", "2026-09-08T12:00:00+08:00", null, "unpaid", "B", "100.00", "CNY"],
+      ["outside", "u3", "2026-09-08T12:00:00+08:00", "2026-09-15T12:00:00+08:00", "paid", "B", "100.00", "CNY"],
+      ["cancelled", "u4", "2026-09-08T12:00:00+08:00", null, "cancelled", "B", "100.00", "CNY"],
+      ["missing-time", "u5", "2026-09-08T12:00:00+08:00", null, "paid", "B", "100.00", "CNY"],
+      ["cross-paid", "u1", "2026-09-07T12:00:00+08:00", "2026-09-08T12:00:00+08:00", "paid", "B", "100.00", "CNY"]
+    ],
+    "ad_spend": [["b1", "B", "campaign-1", "2026-09-08", "50.00"], ["b2", "B", "campaign-2", "2026-09-08", "50.00"]],
+    "expected": {"orders": 1, "revenue": "100.00", "spend": "100.00", "missing_paid_at": 1}
+  }
+}

@@ -1,0 +1,116 @@
+name: ${BA_COMPOSE_PROJECT:-ba-m01-compose}
+x-app: &app
+  image: ba-m01-app:0.1.0
+  build:
+    context: .
+    dockerfile: Dockerfile
+  environment: &environment
+    BA_PUBLIC_URL: ${BA_PUBLIC_URL:-https://192.168.10.22}
+    BA_ISSUER_URL: ${BA_ISSUER_URL:-https://192.168.10.22:9443}
+    BA_ISSUER_INTERNAL_URL: http://idp:8000
+    BA_MASTER_KEY_FILE: /run/secrets/master_key
+    BA_CLIENT_SECRET_FILE: /run/secrets/oidc_client
+    BA_SIGNING_KEY_FILE: /run/secrets/idp_key
+    BA_DEMO_ACCOUNTS_FILE: /run/secrets/demo_accounts
+    BA_DATA_ROOT: /app/data
+    TZ: Asia/Shanghai
+  secrets:
+    - postgres_password
+    - master_key
+    - oidc_client
+    - idp_key
+    - demo_accounts
+  security_opt: ["no-new-privileges:true"]
+  cap_drop: ["ALL"]
+  read_only: true
+  tmpfs: ["/tmp:size=32m,noexec,nosuid"]
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ba_app
+      POSTGRES_DB: ba_compose
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      TZ: Asia/Shanghai
+    secrets: ["postgres_password"]
+    volumes: ["postgres_compose:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ba_app -d ba_compose"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  migrate:
+    <<: *app
+    command: ["-m", "alembic", "upgrade", "head"]
+    depends_on:
+      db: {condition: service_healthy}
+  backend:
+    <<: *app
+    restart: unless-stopped
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    volumes: ["application_data:/app/data"]
+    healthcheck:
+      test: ["CMD", "/app/.venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  worker:
+    <<: *app
+    restart: unless-stopped
+    command: ["-m", "app.worker"]
+    group_add: ["${BA_DOCKER_GID:-995}"]
+    environment:
+      <<: *environment
+      BA_DOCKER_HOST: unix:///var/run/docker.sock
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    volumes: ["application_data:/app/data", "/var/run/docker.sock:/var/run/docker.sock"]
+    healthcheck:
+      test: ["CMD", "/app/.venv/bin/python", "scripts/container-entry.py", "-m", "app.worker", "--check"]
+      interval: 5s
+      timeout: 4s
+      retries: 20
+  idp:
+    <<: *app
+    restart: unless-stopped
+    command: ["-m", "uvicorn", "demo_auth.main:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log", "--no-proxy-headers"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD", "/app/.venv/bin/python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  gateway:
+    image: ba-m01-gateway:0.1.0
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    restart: unless-stopped
+    environment:
+      BA_PUBLIC_URL: ${BA_PUBLIC_URL:-https://192.168.10.22}
+      BA_ISSUER_URL: ${BA_ISSUER_URL:-https://192.168.10.22:9443}
+      BA_TLS_SERVER_NAME: ${BA_TLS_SERVER_NAME:-192.168.10.22}
+    ports: ["${BA_HTTPS_PORT:-443}:443", "${BA_IDP_PORT:-9443}:9443"]
+    volumes: ["caddy_data:/data", "caddy_config:/config"]
+    depends_on:
+      backend: {condition: service_healthy}
+      idp: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os,ssl,urllib.request; urllib.request.urlopen(os.environ['BA_PUBLIC_URL']+'/health/ready', context=ssl.create_default_context(cafile='/data/caddy/pki/authorities/local/root.crt'),timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+volumes:
+  postgres_compose:
+  application_data:
+  caddy_data:
+  caddy_config:
+secrets:
+  postgres_password: {file: .secrets/postgres.password}
+  master_key: {file: .secrets/master.key}
+  oidc_client: {file: .secrets/oidc-client.secret}
+  idp_key: {file: .secrets/idp.pem}
+  demo_accounts: {file: .secrets/demo-accounts.json}

@@ -1,0 +1,24 @@
+{
+    admin off
+    auto_https disable_redirects
+    skip_install_trust
+    storage file_system {
+        root .secrets/caddy
+    }
+}
+https://localhost:8443 {
+    bind 127.0.0.1
+    tls internal
+    @backend path /auth/login /auth/callback /auth/me /auth/logout /api/* /health/*
+    handle @backend {
+        reverse_proxy 127.0.0.1:8010
+    }
+    handle {
+        reverse_proxy 127.0.0.1:5174
+    }
+}
+https://localhost:9443 {
+    bind 127.0.0.1
+    tls internal
+    reverse_proxy 127.0.0.1:8011
+}

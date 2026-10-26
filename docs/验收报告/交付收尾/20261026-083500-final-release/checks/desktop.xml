@@ -1,0 +1,84 @@
+<testsuites id="" name="" tests="40" failures="0" skipped="0" errors="0" time="30.222315">
+<testsuite name="design-parity.spec.ts" timestamp="2026-10-24T07:35:17.181Z" hostname="" tests="40" failures="0" skipped="0" time="29.258" errors="0">
+<testcase name="长结果保持一屏，消息与结果独立滚动 1280×800" classname="design-parity.spec.ts" time="0.713">
+</testcase>
+<testcase name="长结果保持一屏，消息与结果独立滚动 1600×1000" classname="design-parity.spec.ts" time="0.618">
+</testcase>
+<testcase name="长结果保持一屏，消息与结果独立滚动 1920×1080" classname="design-parity.spec.ts" time="0.606">
+</testcase>
+<testcase name="长结果保持一屏，消息与结果独立滚动 2559×1347" classname="design-parity.spec.ts" time="0.632">
+</testcase>
+<testcase name="桌面三栏与状态：none" classname="design-parity.spec.ts" time="0.358">
+</testcase>
+<testcase name="桌面三栏与状态：new" classname="design-parity.spec.ts" time="0.591">
+</testcase>
+<testcase name="桌面三栏与状态：success" classname="design-parity.spec.ts" time="0.72">
+</testcase>
+<testcase name="桌面三栏与状态：running" classname="design-parity.spec.ts" time="0.574">
+</testcase>
+<testcase name="桌面三栏与状态：queued" classname="design-parity.spec.ts" time="0.574">
+</testcase>
+<testcase name="桌面三栏与状态：cancelled" classname="design-parity.spec.ts" time="0.579">
+</testcase>
+<testcase name="桌面三栏与状态：failed" classname="design-parity.spec.ts" time="0.385">
+</testcase>
+<testcase name="桌面三栏与状态：archived" classname="design-parity.spec.ts" time="0.361">
+</testcase>
+<testcase name="桌面三栏与状态：final" classname="design-parity.spec.ts" time="0.61">
+</testcase>
+<testcase name="删除进度使用完整桌面内容宽度" classname="design-parity.spec.ts" time="0.544">
+</testcase>
+<testcase name="数据源列表支持键盘选择，选源后保持未锁定" classname="design-parity.spec.ts" time="1.029">
+</testcase>
+<testcase name="最终报告准备清空附件并显示固定范围，与报告文件分格式状态" classname="design-parity.spec.ts" time="0.685">
+</testcase>
+<testcase name="附件三种状态、删除确认与会话菜单键盘" classname="design-parity.spec.ts" time="1.125">
+</testcase>
+<testcase name="管理差异比较有效版本，校验与冲突保留编辑" classname="design-parity.spec.ts" time="0.584">
+</testcase>
+<testcase name="日志详情、数据源测试、移除确认与配置展开" classname="design-parity.spec.ts" time="0.883">
+</testcase>
+<testcase name="登录入口和回调三态复用原型卡片" classname="design-parity.spec.ts" time="2.899">
+</testcase>
+<testcase name="附件宽度、删除弹窗、键盘焦点及固定浅色外观" classname="design-parity.spec.ts" time="0.954">
+</testcase>
+<testcase name="管理页间距、五页签、输入框与双栏数据源编辑" classname="design-parity.spec.ts" time="1.101">
+</testcase>
+<testcase name="市场指标表格保留原文，非法表格与 HTML 按文字展示" classname="design-parity.spec.ts" time="0.579">
+</testcase>
+<testcase name="原型 26 市场整页的当前轮次、标题和表格对齐" classname="design-parity.spec.ts" time="0.582">
+</testcase>
+<testcase name="证据来源定位及生成时与当前状态：file" classname="design-parity.spec.ts" time="0.578">
+</testcase>
+<testcase name="证据来源定位及生成时与当前状态：tool_output" classname="design-parity.spec.ts" time="0.566">
+</testcase>
+<testcase name="工具过程按轮次默认折叠，保留记录与终态 success" classname="design-parity.spec.ts" time="0.753">
+</testcase>
+<testcase name="工具过程按轮次默认折叠，保留记录与终态 failed" classname="design-parity.spec.ts" time="0.685">
+</testcase>
+<testcase name="工具过程按轮次默认折叠，保留记录与终态 cancelled" classname="design-parity.spec.ts" time="0.671">
+</testcase>
+<testcase name="加载更早消息后合并同轮工具，保留单个折叠入口" classname="design-parity.spec.ts" time="0.563">
+</testcase>
+<testcase name="完整运行过程对齐原型，取消受理期间继续占位" classname="design-parity.spec.ts" time="1.036">
+</testcase>
+<testcase name="市场分析与更早轮次均通过折叠入口查看工具记录" classname="design-parity.spec.ts" time="0.503">
+</testcase>
+<testcase name="高级配置、批准命令、无草稿和时间范围均可完整展开" classname="design-parity.spec.ts" time="1.039">
+</testcase>
+<testcase name="连接失败检查不标记成功，切换数据源不沿用旧测试" classname="design-parity.spec.ts" time="0.506">
+</testcase>
+<testcase name="归档历史可查看且仍然只读" classname="design-parity.spec.ts" time="0.579">
+</testcase>
+<testcase name="附件删除失败保持占额，提供重试且禁止上传和选择" classname="design-parity.spec.ts" time="0.585">
+</testcase>
+<testcase name="源停用保留绑定和历史，证据不足不制造指标" classname="design-parity.spec.ts" time="0.555">
+</testcase>
+<testcase name="断线提示可重连，不重新提交分析" classname="design-parity.spec.ts" time="0.815">
+</testcase>
+<testcase name="登录失效保留问题草稿，提供真实认证入口且不自动重发" classname="design-parity.spec.ts" time="0.934">
+</testcase>
+<testcase name="电脑端 1280 与 1920 宽度保持三栏，源列表不挤压或横向溢出" classname="design-parity.spec.ts" time="0.604">
+</testcase>
+</testsuite>
+</testsuites>

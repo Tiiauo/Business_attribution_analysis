@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "scope": "M05 analysis retry and canonical evidence submission defect fix",
+  "finished_at": "2026-10-24T14:42:47.086949+08:00",
+  "source_revision": {
+    "backend/app/analysis.py": "5d4115747f4b86cf15cfaab9dc316146fbf0e59b5df9b5855d75ee58a729ded2",
+    "backend/tests/test_analysis.py": "cf224bb461f9ac1ac256d28a3dc63de885fca4d77cc44e5065801f6bdeeaca1c",
+    "docs/M05分析与工具.md": "f527aba98d4356b07a79b5b6623678c40ce451a9bbc452c5edc784d8d09ab609",
+    "docs/M02配置与管理.md": "ffc216e3bda4393bef5368b0668d5e073ad011cfdea4e376d8364db8262656d3",
+    "docs/contracts/schemas.json": "659256b3868ece3eddab1c93fddce82079d1a5675b3b50e61a3ab5589dd593f9",
+    "frontend/src/contracts.ts": "9c937e6d2bd1a980b1a8e5e396d1faec5c179204924b1aa684ee5f2b87679856"
+  },
+  "checks": [
+    {
+      "id": "ruff",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "--no-cache",
+        "backend/app/analysis.py",
+        "backend/tests/test_analysis.py"
+      ],
+      "log": "ruff.log"
+    },
+    {
+      "id": "format",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "--no-cache",
+        "backend/app/analysis.py",
+        "backend/tests/test_analysis.py"
+      ],
+      "log": "format.log"
+    },
+    {
+      "id": "contracts",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/export-contracts.py",
+        "--check"
+      ],
+      "log": "contracts.log"
+    }
+  ],
+  "analysis_tests": {
+    "passed": 17,
+    "failed": 0,
+    "xml": "证据/context-retry-after-final.xml"
+  },
+  "real_verification": {
+    "task_id": "40",
+    "original_task_id": "37",
+    "same_original_question": true,
+    "conversation_id": "73",
+    "task_status": "success",
+    "metrics": 16,
+    "evidence_records": 4,
+    "canonical_seven_fields_verified": true,
+    "baseline_metrics_verified": {
+      "基期漏斗_访问用户数(周独立首次访问)": 1000,
+      "基期漏斗_加购用户数": 500,
+      "基期漏斗_有效下单用户数": 200,
+      "分析期漏斗_访问用户数(周独立首次访问)": 1000,
+      "分析期漏斗_加购用户数": 380,
+      "分析期漏斗_有效下单用户数": 140,
+      "基期_访问→有效下单转化率": 20,
+      "分析期_访问→有效下单转化率": 14
+    },
+    "model_calls": 4,
+    "last_completion_tokens": 2401
+  },
+  "browser_verification": {
+    "status": "passed",
+    "task_id": "40",
+    "conversation_id": "73",
+    "real_oidc": true,
+    "six_sections_visible": true,
+    "four_evidence_records_visible": true,
+    "evidence_details_opened": true,
+    "markdown_matches_saved_result": true,
+    "exports_sha256": {
+      "markdown": "f4f1a4e62a1aea1a70f0dd942520c92d538aca8dc1d86c3fc0ee9813fb0ff3f8",
+      "html": "d47647ddb8ef7b9a496305cb8f2eaa596227b6cc98cac8580650e514c3d51c96"
+    },
+    "relogin_downloads_identical": true,
+    "test_sessions_revoked": true,
+    "tls_verification_enabled": true
+  },
+  "budget": {
+    "usage": {
+      "dev": {
+        "calls": 111,
+        "unmeasured_calls": 12,
+        "prompt_upper": 1988503,
+        "completion_upper": 358911
+      },
+      "primary": {
+        "calls": 60,
+        "unmeasured_calls": 0,
+        "prompt_upper": 565284,
+        "completion_upper": 115314
+      }
+    },
+    "historical_cny": 4.458585,
+    "cumulative_upper_estimate_cny": 17.810646000000002,
+    "authorized_cny": 66
+  },
+  "attempts": {
+    "36": "original output truncated at4096",
+    "37": "original repeated invalid output exceeded context",
+    "38": "first fix real trial exceeded16 tool rounds; not accepted",
+    "39": "cancelled during persistent evidence copy validation failures; not accepted",
+    "40": "passed with compact canonical evidence references"
+  },
+  "runtime": "Windows development worker reloaded; HTTPS localhost8443",
+  "limitations": [
+    "未部署到虚拟机443交付实例",
+    "未重跑全量M07或两条四轮演示",
+    "累计台账使用不可读历史usage的保守上界，并非供应商实际扣款",
+    "VM时钟偏差未在本次处理"
+  ]
+}

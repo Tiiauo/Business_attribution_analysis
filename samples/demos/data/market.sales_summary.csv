@@ -1,0 +1,5 @@
+summary_id,channel_id,period_start,currency,order_count,revenue
+sum0A,A,2026-09-01,CNY,100,10000
+sum0B,B,2026-09-01,CNY,100,10000
+sum1A,A,2026-09-08,CNY,100,10000
+sum1B,B,2026-09-08,CNY,60,6000

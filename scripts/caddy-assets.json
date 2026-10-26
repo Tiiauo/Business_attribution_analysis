@@ -1,0 +1,20 @@
+{
+  "version": "2.11.7",
+  "source": "https://github.com/caddyserver/caddy/releases/tag/v2.11.7",
+  "assets": [
+    {
+      "platform": "windows",
+      "file": "caddy_2.11.7_windows_amd64.zip",
+      "url": "https://github.com/caddyserver/caddy/releases/download/v2.11.7/caddy_2.11.7_windows_amd64.zip",
+      "sha512": "c308154504e53755958ffc62d8a2657ab17eefd6dd25c45dbb2c3d93d29519971f77ca652f7d0f2bcb7f980b9ba3822478865e29969d0272d7613550a43152b1",
+      "binary_sha256": "5f93a9bd555f3aac9d33af2756ba14b3519d8cca4ffd55256bdaeab444c9db2a"
+    },
+    {
+      "platform": "linux",
+      "file": "caddy_2.11.7_linux_amd64.tar.gz",
+      "url": "https://github.com/caddyserver/caddy/releases/download/v2.11.7/caddy_2.11.7_linux_amd64.tar.gz",
+      "sha512": "a7a433a1b133efc3c8d10eb0b99d52a24b5ef5c322dc77f5282182b1c0402139ab83f3a99f0c52409df77d20123fb0b523edad8a66d8f5e49136197bf61ef0e7",
+      "binary_sha256": "678ade3bfc088749c81a681adc603333ee0bb023b6a6cfe3c0f58bef8ff854e9"
+    }
+  ]
+}

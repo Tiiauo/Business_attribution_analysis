@@ -1,0 +1,7 @@
+FROM python:3.12-slim
+COPY .tools/caddy-linux/caddy /usr/bin/caddy
+RUN chmod 755 /usr/bin/caddy
+ENV XDG_DATA_HOME=/data XDG_CONFIG_HOME=/config
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY frontend/dist /srv
+ENTRYPOINT ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]

@@ -1,0 +1,35 @@
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.secrets/
+.tools/
+.run/
+待删除文件/
+/data/
+node_modules/
+frontend/dist/
+frontend/test-results/
+*.tsbuildinfo
+
+# Local editor, diagnostic and generated verification artifacts.
+.vscode/
+.idea/
+*.log
+*.pid
+*.tmp
+*.tar
+*.zip
+coverage/
+.coverage
+htmlcov/
+frontend/playwright-report/
+frontend/blob-report/
+
+# Delivery reports are reviewed and added explicitly; keep raw archives local.
+docs/验收报告/
+docs/design/
+docs/维护记录/

@@ -1,0 +1,9 @@
+spend_id,channel_id,campaign_id,attributed_date,amount
+sp0A0,A,campaign0,2026-09-01,500
+sp0A1,A,campaign1,2026-09-01,500
+sp0B0,B,campaign0,2026-09-01,500
+sp0B1,B,campaign1,2026-09-01,500
+sp1A0,A,campaign0,2026-09-08,500
+sp1A1,A,campaign1,2026-09-08,500
+sp1B0,B,campaign0,2026-09-08,750
+sp1B1,B,campaign1,2026-09-08,750

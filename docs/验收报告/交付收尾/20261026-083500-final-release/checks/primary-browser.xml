@@ -1,0 +1,38 @@
+<testsuites id="" name="" tests="13" failures="0" skipped="0" errors="0" time="26.025963">
+<testsuite name="m01.spec.ts" timestamp="2026-10-24T08:01:39.652Z" hostname="" tests="3" failures="0" skipped="0" time="3.367" errors="0">
+<testcase name="登录、独立授权、回调成功、退出，键盘可完成" classname="m01.spec.ts" time="1.052">
+</testcase>
+<testcase name="管理员身份通过真实认证，错误密码有可见反馈" classname="m01.spec.ts" time="0.721">
+</testcase>
+<testcase name="回调失效、等待状态与重试入口" classname="m01.spec.ts" time="1.594">
+</testcase>
+</testsuite>
+<testsuite name="m02.spec.ts" timestamp="2026-10-24T08:01:39.652Z" hostname="" tests="4" failures="0" skipped="0" time="3.544" errors="0">
+<testcase name="管理员完成配置重载、数据源测试和日志查询" classname="m02.spec.ts" time="1.055">
+</testcase>
+<testcase name="普通用户不能进入管理页或调用管理员接口" classname="m02.spec.ts" time="0.526">
+</testcase>
+<testcase name="模型服务遮掩密钥和测试连接不保存配置" classname="m02.spec.ts" time="0.65">
+</testcase>
+<testcase name="表单保存、非法值与版本冲突保留编辑" classname="m02.spec.ts" time="1.313">
+</testcase>
+</testsuite>
+<testsuite name="m03.spec.ts" timestamp="2026-10-24T08:01:39.652Z" hostname="" tests="3" failures="0" skipped="0" time="12.362" errors="0">
+<testcase name="工作台会话新建选源、改名、刷新、归档恢复" classname="m03.spec.ts" time="2.336">
+</testcase>
+<testcase name="工作台会话切换丢弃迟到历史响应" classname="m03.spec.ts" time="1.112">
+</testcase>
+<testcase name="附件上传、解析选择、下载与删除" classname="m03.spec.ts" time="8.914">
+</testcase>
+</testsuite>
+<testsuite name="m05.spec.ts" timestamp="2026-10-24T08:01:39.652Z" hostname="" tests="1" failures="0" skipped="0" time="1.589" errors="0">
+<testcase name="真实最终报告六部分、证据与固定范围" classname="m05.spec.ts" time="1.589">
+</testcase>
+</testsuite>
+<testsuite name="m06.spec.ts" timestamp="2026-10-24T08:01:39.652Z" hostname="" tests="2" failures="0" skipped="0" time="4.276" errors="0">
+<testcase name="双格式导出、下载与复制入口" classname="m06.spec.ts" time="0.896">
+</testcase>
+<testcase name="会话删除确认、墓碑轮询与完成提示" classname="m06.spec.ts" time="3.38">
+</testcase>
+</testsuite>
+</testsuites>

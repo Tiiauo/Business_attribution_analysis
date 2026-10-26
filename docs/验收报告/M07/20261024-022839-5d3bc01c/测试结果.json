@@ -1,0 +1,1228 @@
+{
+  "module_id": "M07",
+  "run_id": "20261024-022839-5d3bc01c",
+  "prd_version": "V1.5",
+  "plan_version": "V1.1",
+  "started_at": "2026-10-24T02:28:39.703109+08:00",
+  "finished_at": "2026-10-24T02:28:39.768875+08:00",
+  "environment": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10",
+    "cpu": 24
+  },
+  "source_revision": {
+    "backend/app/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "backend/app/admin.py": "3cf627720d44183bb0c83e9a315815e52f7c6459ef0c6d7f4116dac6a6eea891",
+    "backend/app/analysis.py": "ec4c560a1aa43b95fc1a12a9e758dd0afe83b641e7e8b85063b8fdb607172f8a",
+    "backend/app/analysis_tools.py": "7ecdeda133e31019414826ccc0aca0fbf51fa1a97459529052bda13ee8a34a88",
+    "backend/app/attachment_parser.py": "378c6a031f50ab38037c636fcbcd9101f26baf5d9d8e3fe8053d19549bf742bc",
+    "backend/app/attachments.py": "a9e7f90d938ad131462542aab3f364dd8a6744ff8ca607211d26be1246b0cb3a",
+    "backend/app/auth.py": "3e939ba3caf8fa138476a40b1e42b5a6132040c120dfd12a74e28ca46e1d25c7",
+    "backend/app/bootstrap.py": "bb0e5fdf6f6b7ef210da1e458c7edec6ab4e9700f62292d657dab5e9cb18d08d",
+    "backend/app/chat.py": "3a3802e62d02d906b703e92ea9c38d275886ed85f5b7026b4ba50f3d2e9ba701",
+    "backend/app/contracts.py": "9a10a853dfd814e873fb1726d2c6ff62c800baa66521c51be9e55e0376ad93a6",
+    "backend/app/core/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "backend/app/core/audit.py": "9572a57b97af6b49152be601ebea25e1e5256864a2f90fab166ca29755e3b7ca",
+    "backend/app/core/config.py": "c88eabffec90e405dd0f13b7fae3f530f693c1067e4a154eba0fe6479df8163d",
+    "backend/app/core/database.py": "8613530c393ae3a4f65d07aa9d5c037583259ac9333e5f5bbd9c5be61f6352d7",
+    "backend/app/core/errors.py": "5c6ffc3e3fb679c9302febf50913dc43a6f815fd565dcfeea752770b4b4f6286",
+    "backend/app/core/security.py": "7ff0f1b890a5eb0f3d13f64ed0812928b151b4ac8cb1910fd6ee182177091a91",
+    "backend/app/credentials.py": "500828f604b1dff1cd488feb950021f9eb4d6eb411e90c63adcdc51661856d9f",
+    "backend/app/file_worker.py": "49fc2d225e92cc3032fd2a0988bacd0d5c763725a219beb1865cadc08ef7d9ed",
+    "backend/app/main.py": "59573b06d9227ed576993ba284003ca3fa2c6d2baef514c32ff8aca385ef61b7",
+    "backend/app/model_client.py": "254024092f475d2e2271b5132341935ab43b79e11afa2256f17a6ed4b4701775",
+    "backend/app/models.py": "4613302cba64e39a82c568342eddde3af04ce102dad658cadd9a5920ead65452",
+    "backend/app/provenance.py": "86995ee49aa9d000d21441a682a6cee3e828167842263d98aef53fe14f75b4c2",
+    "backend/app/reports.py": "d6393c3f8154166c9d22fdafb7a447e6b8f9178034f88657d92b11da46cf2014",
+    "backend/app/runtime.py": "cf93f9d8657a5c8517e265260decffb581cbc820264a5f4c16edb77602498b3e",
+    "backend/app/sample_data.py": "78a46a908def344784db5543c1aa07720146fd424d6d5a3ad9c6d4d71b7542c7",
+    "backend/app/sandbox.py": "0816ad5ecf899cc9304bc0a316c469078b341089ea1589de500464a9442cf0a1",
+    "backend/app/task_events.py": "e3d1de911f63eee3f7e35ce01ab46aba4f08f5d14869b2cc2f9b384c8a563036",
+    "backend/app/tasks.py": "918be2511bf9ae8b4677a53706b8b6614454a4159beb492b4aff7e8a8f9f2fed",
+    "backend/app/worker.py": "a73ebed413250e828f6d076138fb78bc10608e3e72cde3c0f85f9af0768e635c",
+    "backend/demo_auth/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "backend/demo_auth/main.py": "ded226c4368931cc0af4aae0ad553bacbbf5790aa532382db523e7393c050e97",
+    "backend/demo_auth/passwords.py": "87aaca83ca0800d587a3f34db80cca817a96ab03fc2e865cfee24155b99fd793",
+    "backend/migrations/env.py": "f86a911156e675fb0e178025999f5da04cf800d2fc24503671caa5f8d8949ced",
+    "backend/migrations/script.py.mako": "80e81675c9241d8d482d6a58c8474aa6f598b24eb939bb212cd8c988305e34be",
+    "backend/migrations/versions/0001_m01_initial_application_and_oidc_schema.py": "fc7d39b6007d3832a6e69e2a1abc7b2359c1133796ee0ac88180b4f938fb5133",
+    "backend/migrations/versions/0002_m01_integrity.py": "cbcb35a55191130492b0826c8c83c3ca2702141ff62c5b3c822d1a6ba5f01b99",
+    "backend/migrations/versions/0003_m02_runtime.py": "7e15530b46981066a9e00dd1a929e0ecb175507305a911054f8519cba37272f2",
+    "backend/tests/conftest.py": "31d4e56b141b3711bfb8323bdc3386b480300cd7f5abf9f474804325c0e3b020",
+    "backend/tests/fixtures/request-fingerprints.json": "1715ab46bcd622cc1119ebeabc1025e86a5a1132b7642132a59858087ce4e084",
+    "backend/tests/test_admin.py": "4974d6a9e7f91f1e5912d445d91d0cbca630270e3190d8180a122b573b6be395",
+    "backend/tests/test_analysis.py": "8daabfe578d8fd9ffa30c3d5cb725bbd867facd6c392fd655f85b3a3b7d0d3f6",
+    "backend/tests/test_attachments.py": "77388fc86932a782f3e8b2c6e390844519fb9d1b1b073d26fec204d59c9bbde4",
+    "backend/tests/test_auth.py": "e40023022e5fd55a90c28eaeb7b282ed11a86f3695d9339811df761cf0e02753",
+    "backend/tests/test_boundaries.py": "2461dbbb1ae93df3105f3f09534ebaafc2ecef8ff5190ec1619ca7d191c700fe",
+    "backend/tests/test_chat.py": "1568ea0801e5b48711829d75cc333b2b83b98bc5436a2f4d9aabb0df34c7e33d",
+    "backend/tests/test_files.py": "c932a53cb3d23826ec3a2a4163acd291db550f63584685a4f6c60776d9a89cbe",
+    "backend/tests/test_m06.py": "09a816405253e649133a03b60b50a132b548901a91a63a408b399d96c1177201",
+    "backend/tests/test_m07.py": "3c73b8a2f5d453c9d7a3c2480d8087941628d881b78b786f6698f9fa6815e2a2",
+    "backend/tests/test_model_client.py": "5f2661e7b6888dd895dbce2030bf15eba4f80f5e72a2dcfab98cc0b02b489bc7",
+    "backend/tests/test_reports.py": "8a8e3dfdd756db296feb41242fefbc3529ef8ad644b7e88826edabc8ac610734",
+    "backend/tests/test_sample_edges.py": "053fbbe96d35d082456f59771f0ea36ffa67ab8ba0e49adfc53ee910eb1fb8bd",
+    "backend/tests/test_tasks.py": "be4fff438066204562a98fab3ec19dfd902e3f608a49c4aa6dfe5a74449ca719",
+    "frontend/src/admin.tsx": "1489ccafb2559cb33c8130d57225da599078fa17f9f44d68e9ecd253e79292fd",
+    "frontend/src/attachments.tsx": "6c008fdd57be369e916a8a3901f6633b71133fa33121d78d2df2261e5de13e19",
+    "frontend/src/contracts.ts": "9c937e6d2bd1a980b1a8e5e396d1faec5c179204924b1aa684ee5f2b87679856",
+    "frontend/src/main.tsx": "8007dabbaf41108ab6c0001e502aacd51637ed5342e021b51b77685d0e6bf8fa",
+    "frontend/src/styles.css": "42070e0b45bb201b2b838a52aaaa6e965f964e0b542d97f1fe517fe59c4b75a8",
+    "frontend/src/task-session.ts": "944dbb3a5ab2e90752c1bf5b4183090d4b046c0b99d64d9b5fb0adf8b3fa23b7",
+    "frontend/src/workbench.css": "1fe8b0ccceb75829e2c27732911af43d5f6ac2cfb1fbeff19105ddf0bb918a33",
+    "frontend/src/workbench.tsx": "5a7c4bfddd656d75149aeb1679f51239e8a8010190f158cbe178714b9202bba4",
+    "frontend/tests/design-parity.spec.ts": "72272402a3a6097795bcd5c069b7ce27936491ef1dce992eb07a09930cb5b0cf",
+    "frontend/tests/m01.spec.ts": "8e2b5c4bc6c0033c48d7a001ca6b71c0a9c45e25fbb0eb923e360c744cc59781",
+    "frontend/tests/m02.spec.ts": "619a43413a325e9db732877406a8a79f88eeb60a760d1c5ca7b0dd1c8ea76036",
+    "frontend/tests/m03.spec.ts": "45f718dddc4ce5c47578757e09096497b8d5525964d9a6028b524c3513e3eac1",
+    "frontend/tests/m05.spec.ts": "68f9611bb4885c344d5e57f70b431d612dd0dd244d228af80c0a63b2049100b4",
+    "frontend/tests/m06.spec.ts": "75157fe0aa8a667cd43261e4b85684563bc686104b1b55d981c6d47afd90f6a0",
+    "frontend/tests/m07.spec.ts": "01fefc645539df6b82403b30078b0fbb4266e95d0919663acb4973adef75739c",
+    "scripts/caddy-assets.json": "1de013d712ad0e74586298e2c19b41ea61f7ccad07e94b6531440d99af223f4b",
+    "scripts/check-delivery.py": "7bea15d0f62f7cddd4f6efc067d0e3ce8d58b0cdbbed1976d57fc209d38613c6",
+    "scripts/container-entry.py": "aa6a9ada8936a706670a5ca85b1c8de13169e5c752b04af47c1897663c811bf6",
+    "scripts/demo-m07.py": "10d341509db5a33cac165fbc6ca799c9b80db93169cf4aa1f282e2ad87d0e708",
+    "scripts/deploy-compose.ps1": "9971ad48855c4391b63f8fd418be8f583120d0c44c5680b74b2c323d9b606b9a",
+    "scripts/docker-tunnel.ps1": "e53a58cbba047ab71d45bf4bb32450e9c5619d2c845febfcb0895a775657aa9f",
+    "scripts/export-contracts.py": "95d3ef6c5e86fec65da0a9f92b277ca3f065c08a9fb85726f83f5fce1df2fb11",
+    "scripts/prepare.ps1": "327ae0f3c228c2638b65c6633bdef9b06bb439ad2724dc179068d1a20c2f350f",
+    "scripts/smoke-analysis.py": "07cd395618296fe35e3156c54e284c4fe1de8bbc423af0555b3fb2e5c86f8987",
+    "scripts/smoke-attachment.py": "20c0f1103c34ef22feac2c59c3af87b1eb95b29fe0715e486403f05b7c517acb",
+    "scripts/start-dev.ps1": "903f24ee4d8e6cbdbecf7b08a1b1d87e6cf7334c345d86bb9a67ba8eeae3e5b0",
+    "scripts/stop-dev.ps1": "823b9f05d56fc3fd0a3ecef1ae3108bc2fd044be0eab4813f40a8b08928af2ad",
+    "scripts/verify-compose.py": "6b1dddfee2dac4ef7359ba30c3d0a122116ed884cdd9194caf14a73462b2a7e1",
+    "scripts/verify.ps1": "0e739f48ea33eb5054e6cf6f45ce2a86ee440332fef7cfe687b4ae915ce8791a",
+    "scripts/verify.py": "25b31f1902d6fef8dd7a1317b88d148bc0ef3e79d863ab096779fb1d8cba181f",
+    "scripts/verify_m07.py": "e1bfa603eb510129af457d8c5981e4a35dc1ddb8f2d55c67b0d6c104cb1e8361",
+    "samples/boundaries.json": "02a3ee391a61dcdb97b2e2b1c5151509d66cc8d7971fdafcf7c4ea10fe273b9d",
+    "samples/demos/client_error_summary.csv": "a40d0fae32ea80b8533f33595118c25eebc2008b9db78f958558a8e3f41ef8e5",
+    "samples/demos/promotion_calendar.md": "69959b86dae5819a51d0798ba857e290531e8b147fcb631e77419236e1e685da",
+    "samples/demos/README.md": "af5bc398a50075f0543f5a80f1a99aaee1bc0a2457205c2038bc867632ca4199",
+    "samples/queries/behavior.sql": "2c46673affe7b85b5fd8108303c8a7878803e2d5a63ddaeba2cd6e4bd75104e2",
+    "samples/queries/market-quality.sql": "ec0c870427245e959afdf451f5fa9d9fba914a10e3331ca411e56aa5e4bd6513",
+    "samples/queries/market.sql": "14fff9619ae9de3a3fb3f1b26f89bb9e0106fe97bc4df48218db02b18a533b6b",
+    "samples/queries/other-scenarios.sql": "88f43ec3bb0607e0b503e4a24d0afe0c033d5f29ae78c0cbbb030f4069a08bc7"
+  },
+  "scope": "AC-01—AC-58; NFR-01—NFR-09",
+  "excluded_by_user": [
+    "前端页面布局、原型视觉一致性、对比度和控件尺寸；本次仅测试电脑端功能，移动端不在项目使用范围"
+  ],
+  "checks": [
+    {
+      "id": "static",
+      "status": "passed",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "check",
+        "backend",
+        "scripts"
+      ],
+      "seconds": 0.05,
+      "evidence_paths": [
+        "证据/static.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "format",
+      "status": "passed",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "format",
+        "--check",
+        "backend",
+        "scripts"
+      ],
+      "seconds": 0.06,
+      "evidence_paths": [
+        "证据/format.log"
+      ],
+      "previous_attempt": {
+        "run_id": "20261024-021119-7ed66903",
+        "status": "failed",
+        "evidence_paths": [
+          "证据/format-initial.log"
+        ]
+      }
+    },
+    {
+      "id": "lock",
+      "status": "passed",
+      "command": [
+        "uv",
+        "lock",
+        "--check"
+      ],
+      "seconds": 0.02,
+      "evidence_paths": [
+        "证据/lock.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "contracts",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/export-contracts.py",
+        "--check"
+      ],
+      "seconds": 0.92,
+      "evidence_paths": [
+        "证据/contracts.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "backend",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "--junitxml=D:\\Tiiauo\\Documents\\经营归因分析系统\\docs\\验收报告\\M07\\20261024-021119-7ed66903\\证据\\backend.xml"
+      ],
+      "seconds": 760.31,
+      "evidence_paths": [
+        "证据/backend.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "build",
+      "status": "passed",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "seconds": 0.91,
+      "evidence_paths": [
+        "证据/build.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "deployment",
+      "status": "passed",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-File",
+        "scripts/deploy-compose.ps1",
+        "-ProjectName",
+        "ba-m07-acceptance",
+        "-AppPort",
+        "8445",
+        "-IdpPort",
+        "9445"
+      ],
+      "seconds": 86.2,
+      "evidence_paths": [
+        "证据/deployment.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "configuration",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/demo-m07.py",
+        "--prepare"
+      ],
+      "seconds": 10.47,
+      "evidence_paths": [
+        "证据/configuration.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "demos",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/demo-m07.py",
+        "--verify",
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.run\\m07-demos"
+      ],
+      "seconds": 1.5,
+      "evidence_paths": [
+        "证据/demos.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "compose",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/verify-compose.py"
+      ],
+      "seconds": 49.72,
+      "evidence_paths": [
+        "证据/compose.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "browser",
+      "status": "passed",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "m01.spec.ts",
+        "m02.spec.ts",
+        "m03.spec.ts",
+        "m05.spec.ts",
+        "m06.spec.ts",
+        "--grep-invert",
+        "任务发送|窄屏|管理页适配"
+      ],
+      "seconds": 26.34,
+      "evidence_paths": [
+        "证据/browser.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    },
+    {
+      "id": "delivery",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/check-delivery.py",
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\docs\\验收报告\\M07\\20261024-021119-7ed66903\\证据"
+      ],
+      "seconds": 34.34,
+      "evidence_paths": [
+        "证据/delivery.log"
+      ],
+      "reused_from": "docs/验收报告/M07/20261024-021119-7ed66903"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "AC-01",
+      "status": "passed",
+      "tests": [
+        "test_real_oidc_roles_and_cookie",
+        "test_callback_rejects_tampering"
+      ],
+      "checks": [
+        "backend",
+        "compose",
+        "delivery",
+        "browser"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-02",
+      "status": "passed",
+      "tests": [
+        "test_common_role_and_owner_guards",
+        "test_attachment_boundary_parse_options_download_and_isolation",
+        "test_ten_users_real_websockets_three_workers_and_isolation"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-03",
+      "status": "passed",
+      "tests": [
+        "test_history_fixed_boundary_source_lock_and_deleted_snapshots"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-04",
+      "status": "passed",
+      "tests": [
+        "test_attachment_boundary_parse_options_download_and_isolation",
+        "test_xlsx_shape_header_external_entities_and_real_expansion_limits"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-05",
+      "status": "passed",
+      "tests": [
+        "test_send_atomic_idempotency_guards_and_snapshot",
+        "test_send_validation_and_final_scope",
+        "test_errors_have_request_id_and_bound_body"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-06",
+      "status": "passed",
+      "tests": [
+        "test_ten_users_real_websockets_three_workers_and_isolation"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-07",
+      "status": "passed",
+      "tests": [
+        "test_browser_periodic_snapshot_recovers_dropped_events"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-08",
+      "status": "passed",
+      "tests": [
+        "test_queue_three_fifo_cancel_prefix_and_restart"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-09",
+      "status": "passed",
+      "tests": [
+        "test_websocket_subscription_broadcast_single_use_and_account_disable",
+        "test_browser_periodic_snapshot_recovers_dropped_events"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-10",
+      "status": "passed",
+      "tests": [
+        "test_context_summary_persists_and_keeps_recent_history"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-11",
+      "status": "passed",
+      "tests": [
+        "test_query_budget_and_evidence_integrity",
+        "test_independent_funnel_and_payment_boundaries"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-12",
+      "status": "passed",
+      "tests": [
+        "test_sanitized_provider_errors",
+        "test_stream_completion_and_interruption",
+        "test_real_sandbox_timeout_memory_and_disk_limits"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-13",
+      "status": "passed",
+      "tests": [
+        "test_query_budget_and_evidence_integrity"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-14",
+      "status": "passed",
+      "tests": [
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend",
+        "demos",
+        "browser"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-15",
+      "status": "passed",
+      "tests": [
+        "test_archive_blocking_order_and_list_pagination",
+        "test_formula_failure_task_busy_and_batch_authorization"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-16",
+      "status": "passed",
+      "tests": [
+        "test_attachment_task_real_inputs_exports_and_cleanup",
+        "test_export_interruption_and_cleanup_retry"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-17",
+      "status": "passed",
+      "tests": [
+        "test_queued_task_revalidates_source_and_user",
+        "test_execution_snapshot_contract"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-18",
+      "status": "passed",
+      "tests": [
+        "test_samples_isolation_queries_and_publication",
+        "test_sql_rejects_out_of_scope_and_effects",
+        "test_real_sandbox_stats_isolation_and_cancel"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-19",
+      "status": "passed",
+      "tests": [
+        "test_config_concurrency_validation_reload_and_logs",
+        "test_endpoint_normalization_and_rejection"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-20",
+      "status": "passed",
+      "tests": [
+        "test_samples_isolation_queries_and_publication"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-21",
+      "status": "passed",
+      "tests": [
+        "test_independent_funnel_and_payment_boundaries"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-22",
+      "status": "passed",
+      "tests": [
+        "test_independent_funnel_and_payment_boundaries"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-23",
+      "status": "passed",
+      "tests": [
+        "test_worker_restart_fails_legacy_running_task",
+        "test_real_sandbox_timeout_memory_and_disk_limits",
+        "test_storage_refusal_preserves_existing_files"
+      ],
+      "checks": [
+        "backend",
+        "compose",
+        "delivery"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-24",
+      "status": "passed",
+      "tests": [
+        "test_queue_three_fifo_cancel_prefix_and_restart",
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-25",
+      "status": "passed",
+      "tests": [
+        "test_config_concurrency_validation_reload_and_logs",
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-26",
+      "status": "passed",
+      "tests": [
+        "test_attachment_task_real_inputs_exports_and_cleanup",
+        "test_real_sandbox_stats_isolation_and_cancel"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-27",
+      "status": "passed",
+      "tests": [
+        "test_browser_periodic_snapshot_recovers_dropped_events",
+        "test_websocket_subscription_broadcast_single_use_and_account_disable"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-28",
+      "status": "passed",
+      "tests": [
+        "test_evidence_shared_contract_and_control_frame",
+        "test_query_budget_and_evidence_integrity"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-29",
+      "status": "passed",
+      "tests": [
+        "test_samples_isolation_queries_and_publication",
+        "test_removed_source_retains_identity"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-30",
+      "status": "passed",
+      "tests": [
+        "test_conversation_lifecycle_sources_and_guards",
+        "test_send_atomic_idempotency_guards_and_snapshot"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-31",
+      "status": "passed",
+      "tests": [
+        "test_chat_browser_on_isolated_database"
+      ],
+      "checks": [
+        "backend",
+        "browser"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-32",
+      "status": "passed",
+      "tests": [
+        "test_conversation_lifecycle_sources_and_guards",
+        "test_send_validation_and_final_scope"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-33",
+      "status": "passed",
+      "tests": [
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-34",
+      "status": "passed",
+      "tests": [
+        "test_attachment_task_real_inputs_exports_and_cleanup",
+        "test_export_interruption_and_cleanup_retry"
+      ],
+      "checks": [
+        "backend",
+        "compose",
+        "delivery"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-35",
+      "status": "passed",
+      "tests": [
+        "test_config_concurrency_validation_reload_and_logs",
+        "test_execution_snapshot_contract",
+        "test_removed_source_retains_identity"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-36",
+      "status": "passed",
+      "tests": [
+        "test_export_interruption_and_cleanup_retry",
+        "test_formula_failure_task_busy_and_batch_authorization"
+      ],
+      "checks": [
+        "backend",
+        "compose",
+        "delivery"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-37",
+      "status": "passed",
+      "tests": [
+        "test_real_sandbox_stats_isolation_and_cancel",
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-38",
+      "status": "passed",
+      "tests": [
+        "test_queue_three_fifo_cancel_prefix_and_restart",
+        "test_worker_restart_fails_legacy_running_task",
+        "test_browser_periodic_snapshot_recovers_dropped_events"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-39",
+      "status": "passed",
+      "tests": [
+        "test_send_validation_and_final_scope"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-40",
+      "status": "passed",
+      "tests": [
+        "test_send_atomic_idempotency_guards_and_snapshot",
+        "test_history_fixed_boundary_source_lock_and_deleted_snapshots"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-41",
+      "status": "passed",
+      "tests": [
+        "test_context_summary_persists_and_keeps_recent_history",
+        "test_query_budget_and_evidence_integrity"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-42",
+      "status": "passed",
+      "tests": [
+        "test_text_and_row_limits",
+        "test_xlsx_shape_header_external_entities_and_real_expansion_limits",
+        "test_real_sandbox_timeout_memory_and_disk_limits"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-43",
+      "status": "passed",
+      "tests": [
+        "test_websocket_subscription_broadcast_single_use_and_account_disable"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-44",
+      "status": "passed",
+      "tests": [
+        "test_chat_browser_on_isolated_database",
+        "test_task_browser_isolated"
+      ],
+      "checks": [
+        "backend",
+        "browser"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-45",
+      "status": "passed",
+      "tests": [
+        "test_parse_restart_barrier_and_late_callback"
+      ],
+      "checks": [
+        "backend",
+        "compose",
+        "delivery"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-46",
+      "status": "passed",
+      "tests": [
+        "test_send_atomic_idempotency_guards_and_snapshot",
+        "test_request_fingerprint_fixed_fixture"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-47",
+      "status": "passed",
+      "tests": [
+        "test_formula_failure_task_busy_and_batch_authorization",
+        "test_export_interruption_and_cleanup_retry"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-48",
+      "status": "passed",
+      "tests": [
+        "test_query_budget_and_evidence_integrity",
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-49",
+      "status": "passed",
+      "tests": [
+        "test_formula_failure_task_busy_and_batch_authorization",
+        "test_export_interruption_and_cleanup_retry"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-50",
+      "status": "passed",
+      "tests": [
+        "test_browser_periodic_snapshot_recovers_dropped_events"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-51",
+      "status": "passed",
+      "tests": [
+        "test_hidden_xlsx_formulas_and_invalid_1900_date",
+        "test_formula_failure_task_busy_and_batch_authorization"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-52",
+      "status": "passed",
+      "tests": [
+        "test_independent_funnel_and_payment_boundaries"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-53",
+      "status": "passed",
+      "tests": [
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-54",
+      "status": "passed",
+      "tests": [
+        "test_browser_periodic_snapshot_recovers_dropped_events",
+        "test_task_browser_isolated"
+      ],
+      "checks": [
+        "backend",
+        "browser"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-55",
+      "status": "passed",
+      "tests": [
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-56",
+      "status": "passed",
+      "tests": [
+        "test_send_validation_and_final_scope",
+        "test_attachment_task_real_inputs_exports_and_cleanup"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-57",
+      "status": "passed",
+      "tests": [
+        "test_csv_preserves_values_header_options_and_original_positions",
+        "test_xlsx_exact_types_dates_sparse_cells_and_header"
+      ],
+      "checks": [
+        "backend"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "AC-58",
+      "status": "passed",
+      "tests": [
+        "test_independent_funnel_and_payment_boundaries"
+      ],
+      "checks": [
+        "backend",
+        "demos"
+      ],
+      "evidence_paths": [
+        "证据/backend.xml"
+      ]
+    },
+    {
+      "id": "NFR-01",
+      "status": "passed",
+      "checks": [
+        "deployment",
+        "compose",
+        "delivery"
+      ]
+    },
+    {
+      "id": "NFR-02",
+      "status": "passed",
+      "checks": [
+        "backend"
+      ]
+    },
+    {
+      "id": "NFR-03",
+      "status": "passed",
+      "checks": [
+        "backend",
+        "compose",
+        "delivery"
+      ]
+    },
+    {
+      "id": "NFR-04",
+      "status": "passed",
+      "checks": [
+        "backend",
+        "browser"
+      ]
+    },
+    {
+      "id": "NFR-05",
+      "status": "passed",
+      "checks": [
+        "backend"
+      ]
+    },
+    {
+      "id": "NFR-06",
+      "status": "passed",
+      "checks": [
+        "backend"
+      ]
+    },
+    {
+      "id": "NFR-07",
+      "status": "passed",
+      "checks": [
+        "backend",
+        "browser",
+        "demos"
+      ]
+    },
+    {
+      "id": "NFR-08",
+      "status": "passed",
+      "checks": [
+        "delivery"
+      ]
+    },
+    {
+      "id": "NFR-09",
+      "status": "passed",
+      "checks": [
+        "browser",
+        "backend"
+      ]
+    }
+  ],
+  "pending_integrations": [],
+  "module_verdict": "模块验收通过",
+  "totals": {
+    "passed": 67,
+    "failed": 0
+  },
+  "reused_execution_started_at": "2026-10-24T02:11:19.363699+08:00",
+  "reused_execution_finished_at": "2026-10-24T02:27:30.250900+08:00",
+  "provenance": {
+    "source_run": "20261024-021119-7ed66903",
+    "source_hashes_verified": true,
+    "basis": "项目规划7.2：复用同次开发已通过且未受修改影响的检查；仅重跑修正后的格式检查",
+    "rechecked": [
+      "format"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+﻿{
+    "browser_tests_passed":  11,
+    "environment":  "https://localhost:8443",
+    "real_browser":  {
+                         "status":  "passed",
+                         "conversation_id":  "73",
+                         "tls_verification_enabled":  true,
+                         "toolCount":  49,
+                         "taskCount":  5,
+                         "nextCursor":  null,
+                         "labels":  [
+                                        "第 1 轮 · 12 次工具调用查看过程收起过程",
+                                        "第 2 轮 · 9 次工具调用查看过程收起过程",
+                                        "第 3 轮 · 16 次工具调用 · 6 次失败查看过程收起过程",
+                                        "第 4 轮 · 7 次工具调用查看过程收起过程",
+                                        "第 5 轮 · 5 次工具调用查看过程收起过程"
+                                    ],
+                         "evidenceCount":  4,
+                         "layout":  {
+                                        "viewportHeight":  1000,
+                                        "pageHeight":  1000,
+                                        "scrollY":  0,
+                                        "toolbarTop":  0
+                                    },
+                         "pageErrors":  [
+
+                                        ]
+                     },
+    "sources":  [
+                    {
+                        "sha256":  "3fd7fdb39e5c664c0e97b3320671d03b96be88db280a4fc0a1af40a52ac21561",
+                        "path":  "frontend/src/workbench.tsx"
+                    },
+                    {
+                        "sha256":  "42d9b3c2d61bd24475d249ffc3e2c0f9d256df50ffa5317c03340b54a89340c3",
+                        "path":  "frontend/src/workbench.css"
+                    },
+                    {
+                        "sha256":  "76929b5d6fda122b005c7bc9f71757d0a0d62a0895757a3ab3ecbbe58f590eb2",
+                        "path":  "frontend/tests/design-parity.spec.ts"
+                    },
+                    {
+                        "sha256":  "24acd45b4a5405152d1cff80f0a3325a4f009c87dbc4d3f7e0792f3b1276ac48",
+                        "path":  "前端页面说明.md"
+                    }
+                ],
+    "new_model_calls":  0,
+    "primary_deployed":  false,
+    "build_exit_code":  0,
+    "timestamp":  "2026-10-24T15:24:28.4682395+08:00",
+    "status":  "passed"
+}

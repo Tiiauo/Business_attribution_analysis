@@ -1,0 +1,668 @@
+{
+  "module_id": "M01",
+  "run_id": "20261023-111442-01b1dcd9",
+  "prd_version": "V1.5",
+  "plan_version": "V1.1",
+  "scope": "M01 独立模块及 Windows/VM Compose 联调；后续模块 AC 分项待验",
+  "module": "M01",
+  "status": "passed",
+  "started_at": "2026-10-23T11:14:42.622460+08:00",
+  "finished_at": "2026-10-23T11:16:11.729314+08:00",
+  "requirements": [
+    "FR-01",
+    "NFR-01/03/04 基础部分",
+    "AC-01 M01 分项",
+    "AC-02 公共守卫",
+    "AC-43 REST 分项",
+    "AC-44 M01 页面"
+  ],
+  "source_sha256": "ffb0ab1fa89f45dbd732899157b90ffd99406d95675cf6884bab038d078f13b8",
+  "source_file_count": 81,
+  "source_commit": null,
+  "source_revision": {
+    "commit": null,
+    "workspace_sha256": "ffb0ab1fa89f45dbd732899157b90ffd99406d95675cf6884bab038d078f13b8",
+    "files": [
+      {
+        "path": ".dockerignore",
+        "sha256": "294a7239c7912460317f907b0c22c28e3c452231d750c83a420cac82ba9338e2"
+      },
+      {
+        "path": ".env.example",
+        "sha256": "6ec18bcc87ccf4e16912aed6b01420727cc1cd3dd8288d3b201ed93864307a96"
+      },
+      {
+        "path": ".gitignore",
+        "sha256": "db6f23cb3e501a7372c870dc9dec58cee601062de02e6e96c4ca3b1e6babb284"
+      },
+      {
+        "path": ".python-version",
+        "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+      },
+      {
+        "path": "agent.md",
+        "sha256": "92bd3ef679c698c0a7b0d41539106b225f18e37e6fd017056f24dda6fc9bda93"
+      },
+      {
+        "path": "alembic.ini",
+        "sha256": "bcd94170f58ea034a06e42b6c9c90c1dffea7949a42059cb568cf2ace151490c"
+      },
+      {
+        "path": "backend/app/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "backend/app/auth.py",
+        "sha256": "fd6c739df0a4fd8eb0bf8b5845567fa0d6505bc0bd776b5712ec2c90382838d2"
+      },
+      {
+        "path": "backend/app/bootstrap.py",
+        "sha256": "bb0e5fdf6f6b7ef210da1e458c7edec6ab4e9700f62292d657dab5e9cb18d08d"
+      },
+      {
+        "path": "backend/app/contracts.py",
+        "sha256": "e7b0f00c00ef91999cb6120bf41ecdbbfdf630f39d0274e838832e7ae1671aba"
+      },
+      {
+        "path": "backend/app/core/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "backend/app/core/audit.py",
+        "sha256": "9572a57b97af6b49152be601ebea25e1e5256864a2f90fab166ca29755e3b7ca"
+      },
+      {
+        "path": "backend/app/core/config.py",
+        "sha256": "967c198a57f37bfc18312181a66f7d2d095effe1875087536ae7f1b5243c5c66"
+      },
+      {
+        "path": "backend/app/core/database.py",
+        "sha256": "8613530c393ae3a4f65d07aa9d5c037583259ac9333e5f5bbd9c5be61f6352d7"
+      },
+      {
+        "path": "backend/app/core/errors.py",
+        "sha256": "83033464ec2e798be79747fb5257fd633c6fa91a001d3dd397fad910c3ba0257"
+      },
+      {
+        "path": "backend/app/core/security.py",
+        "sha256": "29de60fe2f0f8bb6666e1c6c18286d884036411fd140f79dbedffeda289f425b"
+      },
+      {
+        "path": "backend/app/credentials.py",
+        "sha256": "500828f604b1dff1cd488feb950021f9eb4d6eb411e90c63adcdc51661856d9f"
+      },
+      {
+        "path": "backend/app/main.py",
+        "sha256": "841c99144ff7877095bd68c899659317ae83a57267938a3f19c81604e97328e9"
+      },
+      {
+        "path": "backend/app/models.py",
+        "sha256": "c2d4b271a62a495bba448ae52efd0060750d9a2f916c1155ac49824b46d48f1d"
+      },
+      {
+        "path": "backend/demo_auth/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "path": "backend/demo_auth/main.py",
+        "sha256": "79cd6feecf17e0e0c9b97e8263aeed70e5affc14c8c3c0551861e3a1c1cf9657"
+      },
+      {
+        "path": "backend/demo_auth/passwords.py",
+        "sha256": "87aaca83ca0800d587a3f34db80cca817a96ab03fc2e865cfee24155b99fd793"
+      },
+      {
+        "path": "backend/migrations/env.py",
+        "sha256": "f86a911156e675fb0e178025999f5da04cf800d2fc24503671caa5f8d8949ced"
+      },
+      {
+        "path": "backend/migrations/script.py.mako",
+        "sha256": "80e81675c9241d8d482d6a58c8474aa6f598b24eb939bb212cd8c988305e34be"
+      },
+      {
+        "path": "backend/migrations/versions/0001_m01_initial_application_and_oidc_schema.py",
+        "sha256": "fc7d39b6007d3832a6e69e2a1abc7b2359c1133796ee0ac88180b4f938fb5133"
+      },
+      {
+        "path": "backend/migrations/versions/0002_m01_integrity.py",
+        "sha256": "cbcb35a55191130492b0826c8c83c3ca2702141ff62c5b3c822d1a6ba5f01b99"
+      },
+      {
+        "path": "backend/tests/conftest.py",
+        "sha256": "77a131636d3b0aec99217be2d8ec02de77324244f7cb9a230e37d97c1891a487"
+      },
+      {
+        "path": "backend/tests/fixtures/request-fingerprints.json",
+        "sha256": "1715ab46bcd622cc1119ebeabc1025e86a5a1132b7642132a59858087ce4e084"
+      },
+      {
+        "path": "backend/tests/test_auth.py",
+        "sha256": "e40023022e5fd55a90c28eaeb7b282ed11a86f3695d9339811df761cf0e02753"
+      },
+      {
+        "path": "backend/tests/test_boundaries.py",
+        "sha256": "2461dbbb1ae93df3105f3f09534ebaafc2ecef8ff5190ec1619ca7d191c700fe"
+      },
+      {
+        "path": "backend/tests/test_reports.py",
+        "sha256": "cecd4fcf44986a2799496af890f8c99a7d1c5c7dd0edc4db7e4a1a9dc09ab00b"
+      },
+      {
+        "path": "Caddyfile",
+        "sha256": "8e6f387385ee95c94e93ccc98388de2f3b3a7326f68fdf4d71f39c009db8e703"
+      },
+      {
+        "path": "Caddyfile.dev",
+        "sha256": "0f3d63d240f31a8081fef28df730c122e75603067e55dde00c7ab97299b58cc1"
+      },
+      {
+        "path": "compose.dev.yml",
+        "sha256": "5c21828801d82804ff3e59f97a2639c4da25ef68a76729eed6663ae37dca46cd"
+      },
+      {
+        "path": "compose.yml",
+        "sha256": "9de07e7faeedbf236a989315f3410d875e2d02e5506796e0c85e2b1b57714124"
+      },
+      {
+        "path": "Dockerfile",
+        "sha256": "eb887b00693d77bf8d80fac6710f6942206d315cfb8981bc6c07f8f6e3ba580a"
+      },
+      {
+        "path": "Dockerfile.gateway",
+        "sha256": "298342cf04f4d4dfc9053935676963c2f40b1473726e8f228a94d8e09a07f8a8"
+      },
+      {
+        "path": "docs/contracts/schemas.json",
+        "sha256": "bd08a28d9ba87292e4926d13e39a34913fd0ca5686207d757146b4b59029ac56"
+      },
+      {
+        "path": "docs/design/M01/M1aRgb.png",
+        "sha256": "288142b95365180224e3e0bd224b8d4e449cc21635f0477d226f526d5147a80b"
+      },
+      {
+        "path": "docs/design/M01/review.md",
+        "sha256": "ac8faefe58ce17a455cbab182e4e1003880983f440663e4eefbbc20c1684e76d"
+      },
+      {
+        "path": "docs/design/M01/snP8O.png",
+        "sha256": "71101473f47d95c2101ab3cdb3c85f6b1ba1933827ae1fbe031c44ee4a4383db"
+      },
+      {
+        "path": "docs/design/M01/Z7IHA6.png",
+        "sha256": "092c8e81c6bb651d02f518cb3c64eb9e15764bc8fa65cb4323ea48127a175f0b"
+      },
+      {
+        "path": "docs/M01接口与认证.md",
+        "sha256": "e61c1911736ae745cc34b3fd33062a1af4a91613d4772d4eb4bfa38c7266d654"
+      },
+      {
+        "path": "frontend/index.html",
+        "sha256": "943e571a59170ce94138db0593992ceed068a737f08e74e08b58a5db2c029cfd"
+      },
+      {
+        "path": "frontend/package-lock.json",
+        "sha256": "6b9469986aebca58306cc40aba2090fa327675acdf5dd33e35db92e0499ea9f1"
+      },
+      {
+        "path": "frontend/package.json",
+        "sha256": "f1b04aac040bc3b685a3b6f7f5bf43889fcfa9b92ce9ce05070ed8d34d1a5c8c"
+      },
+      {
+        "path": "frontend/playwright.config.ts",
+        "sha256": "867c97a33ecad373054325115d6566b4f01146c35b7c80994431b5aff2c75010"
+      },
+      {
+        "path": "frontend/public/auth.css",
+        "sha256": "a0819be055f23083c837145ae2d9b69f1f4fea7becf998100bd097eadc1361a6"
+      },
+      {
+        "path": "frontend/public/fonts/noto-sans-sc-400.ttf",
+        "sha256": "8b783e8841ff2cdded1569867188e9b13f359e92b64da30973e93f09f97dbbc2"
+      },
+      {
+        "path": "frontend/public/fonts/noto-sans-sc-500.ttf",
+        "sha256": "739f1d7d2677ae9a2344bdf4eb1f81928d36a513e36b89f7ee9b6ab29aa72a7f"
+      },
+      {
+        "path": "frontend/public/fonts/noto-sans-sc-600.ttf",
+        "sha256": "8d48b17961ac7d8db8266c43c94e8b59c4b128d577f643da0df0a38451e9d79b"
+      },
+      {
+        "path": "frontend/public/fonts/OFL.txt",
+        "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+      },
+      {
+        "path": "frontend/public/fonts/source.json",
+        "sha256": "92c7365b5ee317e658ee0490d5fd0a03877c65305bdfd6e74e67c805d1981e0b"
+      },
+      {
+        "path": "frontend/src/contracts.ts",
+        "sha256": "13e21c0ef726323a8568b51d61d38172dcd99fe8178f521c6b2421d3007963c5"
+      },
+      {
+        "path": "frontend/src/main.tsx",
+        "sha256": "04a11253e981870d52417a6d3c5870d75846f550d66b510cf133aa7687d1e719"
+      },
+      {
+        "path": "frontend/src/styles.css",
+        "sha256": "42070e0b45bb201b2b838a52aaaa6e965f964e0b542d97f1fe517fe59c4b75a8"
+      },
+      {
+        "path": "frontend/tests/m01.spec.ts",
+        "sha256": "93ff1ee5f5435d0d9cc0efc58b6db26708a88c8d0e43548eb77da202e6816332"
+      },
+      {
+        "path": "frontend/tsconfig.json",
+        "sha256": "9ba3c312b6978f34fbe220d5bc2d4adb77af59faba6889fc52ef075c014e3b70"
+      },
+      {
+        "path": "frontend/vite.config.ts",
+        "sha256": "7ad9f415d5458e563bc8b76dd174ff87df6d6221b95f20a3d2aa744a3246a0db"
+      },
+      {
+        "path": "PRD.md",
+        "sha256": "b0d23e031521af7310230065cc36db337801ea88b10eb64ad3a7b3f175241cf8"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha256": "fd3fb2f51ec4463ab47e774d1c8867e2d8b4fcab3191f4dc325c1707d3744c09"
+      },
+      {
+        "path": "README.md",
+        "sha256": "d6666e890da6037ec5364128b543973179f04309cb9ce7672adfb4bd61d53173"
+      },
+      {
+        "path": "scripts/caddy-assets.json",
+        "sha256": "1de013d712ad0e74586298e2c19b41ea61f7ccad07e94b6531440d99af223f4b"
+      },
+      {
+        "path": "scripts/container-entry.py",
+        "sha256": "aa6a9ada8936a706670a5ca85b1c8de13169e5c752b04af47c1897663c811bf6"
+      },
+      {
+        "path": "scripts/deploy-compose.ps1",
+        "sha256": "4ff8f9996594ccf7bbae5f0b8a8e8baa4deb834b404307db0eadad506235ae2d"
+      },
+      {
+        "path": "scripts/docker-tunnel.ps1",
+        "sha256": "e53a58cbba047ab71d45bf4bb32450e9c5619d2c845febfcb0895a775657aa9f"
+      },
+      {
+        "path": "scripts/export-contracts.py",
+        "sha256": "3c0da49d41acaee772a68d805815d1504c2f3b7f26af11e216aea1b1dab6b6bd"
+      },
+      {
+        "path": "scripts/prepare.ps1",
+        "sha256": "327ae0f3c228c2638b65c6633bdef9b06bb439ad2724dc179068d1a20c2f350f"
+      },
+      {
+        "path": "scripts/start-dev.ps1",
+        "sha256": "c20bec18700a722234c9293bb47407929511477c1616e97454a82efb837eebb0"
+      },
+      {
+        "path": "scripts/stop-dev.ps1",
+        "sha256": "36f266980778f39b0243c88184bb9b561b936e53d0f106dd012bf4ee5a1a36c1"
+      },
+      {
+        "path": "scripts/verify-compose.py",
+        "sha256": "d043b0285ca12288fcf55a4c6e6f9bb15ca0575318832b762f68e0ae4aedb0be"
+      },
+      {
+        "path": "scripts/verify.ps1",
+        "sha256": "3129ebf480de3df4abe426de0b1670384fa1cb213a420dabb02eac9f76a8b78a"
+      },
+      {
+        "path": "scripts/verify.py",
+        "sha256": "d42a49c3904ba5a459f29082d15ccd1ae7a5b7051b82aa89090df3ab614e74a3"
+      },
+      {
+        "path": "uv.lock",
+        "sha256": "19a02e3bd36f885df5f4ea92ed7873e3c8265e1ca1a632a53e58caae91a0be09"
+      },
+      {
+        "path": "前端原型图.pen",
+        "sha256": "c337251b4d2ea4e77e704965e5cdc2c14ffaae9837d7422a0464671b8d2e290d"
+      },
+      {
+        "path": "前端页面说明.md",
+        "sha256": "7e3e127fdf5b47fbc49f92f3a118813e2195b1a8b284ef63ed9593e91190af79"
+      },
+      {
+        "path": "技术设计与环境准备.md",
+        "sha256": "c2af2d334b9d5dba2e2bcd8501aabb2134b863d02756b5e4415988329fecadcb"
+      },
+      {
+        "path": "项目要求.md",
+        "sha256": "28a3a3c36597c31ec80753c2f3008cd7a8989f9e4d1a2c049d2ad246159ff363"
+      },
+      {
+        "path": "项目规划.md",
+        "sha256": "84d0ece5b8bffa22c0f4944ae4d1ac684302ca3a5ce45de9e266de934b44be4b"
+      },
+      {
+        "path": "项目计划书.html",
+        "sha256": "c0c722ef474585e26249a880de7abf82d7ba4b23bf1bcdf747c167336ca9083e"
+      },
+      {
+        "path": "项目计划书.test.cjs",
+        "sha256": "407b2943cab0c885c25af8a6396f236609f1aea9871e5d2477b10191c2fd21c9"
+      }
+    ]
+  },
+  "environment": {
+    "windows": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10",
+    "cpu_logical_count": 24,
+    "disk_free_bytes": 364437954560,
+    "physical_memory": {
+      "total_bytes": 33787346944,
+      "available_bytes": 11492704256
+    },
+    "browser": "Windows 系统安装的 Chrome，正常 TLS 校验",
+    "model": "未配置，未调用",
+    "effective_config": "M01 启动配置；runtime_bundle 由 M02 初始化",
+    "docker_host": "secops@192.168.10.22 CentOS 7; Docker 26.1.4; Compose 2.27.1",
+    "database": "independent PostgreSQL 16 + temporary ba_test_* database",
+    "chrome_version": "155.0.8059.86"
+  },
+  "design": {
+    "prototype_sha256": "c337251b4d2ea4e77e704965e5cdc2c14ffaae9837d7422a0464671b8d2e290d",
+    "nodes": [
+      "W0mGJ",
+      "Z7IHA6",
+      "snP8O",
+      "M1aRgb"
+    ],
+    "viewports": [
+      "1600×1000",
+      "390×844"
+    ],
+    "review": "docs/design/M01/review.md",
+    "screenshots": "证据/浏览器"
+  },
+  "checks": [
+    {
+      "id": "dependency-lock",
+      "requirement_refs": [
+        "NFR-01"
+      ],
+      "name": "dependency-lock",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 0.02,
+      "command": [
+        "uv",
+        "lock",
+        "--check"
+      ],
+      "evidence": "证据/dependency-lock.log",
+      "evidence_paths": [
+        "证据/dependency-lock.log"
+      ]
+    },
+    {
+      "id": "dependency-integrity",
+      "requirement_refs": [
+        "NFR-01"
+      ],
+      "name": "dependency-integrity",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 0.03,
+      "command": [
+        "uv",
+        "pip",
+        "check"
+      ],
+      "evidence": "证据/dependency-integrity.log",
+      "evidence_paths": [
+        "证据/dependency-integrity.log"
+      ]
+    },
+    {
+      "id": "python-lint",
+      "requirement_refs": [
+        "M01 工程质量"
+      ],
+      "name": "python-lint",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 0.03,
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "check",
+        "backend",
+        "scripts"
+      ],
+      "evidence": "证据/python-lint.log",
+      "evidence_paths": [
+        "证据/python-lint.log"
+      ]
+    },
+    {
+      "id": "python-format",
+      "requirement_refs": [
+        "M01 工程质量"
+      ],
+      "name": "python-format",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 0.05,
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "ruff",
+        "format",
+        "--check",
+        "backend",
+        "scripts"
+      ],
+      "evidence": "证据/python-format.log",
+      "evidence_paths": [
+        "证据/python-format.log"
+      ]
+    },
+    {
+      "id": "shared-contracts",
+      "requirement_refs": [
+        "PRD 5.1/6.2/7/8",
+        "M01 公共契约"
+      ],
+      "name": "shared-contracts",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 0.19,
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/export-contracts.py",
+        "--check"
+      ],
+      "evidence": "证据/shared-contracts.log",
+      "evidence_paths": [
+        "证据/shared-contracts.log"
+      ]
+    },
+    {
+      "id": "real-postgres-oidc",
+      "requirement_refs": [
+        "FR-01",
+        "AC-01 M01",
+        "AC-02 公共守卫",
+        "AC-43 REST"
+      ],
+      "name": "real-postgres-oidc",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 61.14,
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "--junitxml",
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\docs\\验收报告\\M01\\20261023-111442-01b1dcd9\\证据\\backend.xml"
+      ],
+      "evidence": "证据/real-postgres-oidc.log",
+      "evidence_paths": [
+        "证据/real-postgres-oidc.log"
+      ]
+    },
+    {
+      "id": "frontend-build",
+      "requirement_refs": [
+        "NFR-01"
+      ],
+      "name": "frontend-build",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 0.66,
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "evidence": "证据/frontend-build.log",
+      "evidence_paths": [
+        "证据/frontend-build.log"
+      ]
+    },
+    {
+      "id": "browser-auth",
+      "requirement_refs": [
+        "FR-01",
+        "AC-44 M01 页面"
+      ],
+      "name": "browser-auth",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 9.47,
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "evidence": "证据/browser-auth.log",
+      "evidence_paths": [
+        "证据/browser-auth.log"
+      ]
+    },
+    {
+      "id": "independent-compose",
+      "requirement_refs": [
+        "AC-01 M01",
+        "NFR-01/03 基础"
+      ],
+      "name": "independent-compose",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 12.45,
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/verify-compose.py",
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\docs\\验收报告\\M01\\20261023-111442-01b1dcd9\\证据\\compose.json"
+      ],
+      "evidence": "证据/independent-compose.log",
+      "evidence_paths": [
+        "证据/independent-compose.log"
+      ]
+    },
+    {
+      "id": "compose-browser-auth",
+      "requirement_refs": [
+        "AC-01 M01",
+        "AC-44 M01 页面"
+      ],
+      "name": "compose-browser-auth",
+      "status": "passed",
+      "actual": "exit_code=0",
+      "seconds": 4.66,
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "evidence": "证据/compose-browser-auth.log",
+      "evidence_paths": [
+        "证据/compose-browser-auth.log"
+      ]
+    }
+  ],
+  "totals": {
+    "passed": 10,
+    "failed": 0,
+    "not_run": 0,
+    "total": 10
+  },
+  "backend_tests": {
+    "tests": "35",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0"
+  },
+  "pending": [
+    "AC-02: M02—M06 各业务端点与 M07 全量越权",
+    "AC-43: M04 多连接及停用后 30 秒关闭 WS",
+    "其余页面由 M07 汇总验收",
+    "M02—M07 功能、真实企业平台及模型调用尚未验收；模型费用 0 元"
+  ],
+  "module_verdict": "模块分项验收通过",
+  "pending_integrations": [
+    "AC-02: M02—M06 各业务端点与 M07 全量越权",
+    "AC-43: M04 多连接及停用后 30 秒关闭 WS",
+    "其余页面由 M07 汇总验收",
+    "M02—M07 功能、真实企业平台及模型调用尚未验收；模型费用 0 元"
+  ],
+  "design_baseline": {
+    "prototype_sha256": "c337251b4d2ea4e77e704965e5cdc2c14ffaae9837d7422a0464671b8d2e290d",
+    "nodes": [
+      "W0mGJ",
+      "Z7IHA6",
+      "snP8O",
+      "M1aRgb"
+    ],
+    "viewports": [
+      "1600×1000",
+      "390×844"
+    ],
+    "review": "docs/design/M01/review.md",
+    "screenshots": "证据/浏览器"
+  },
+  "page_checks": [
+    {
+      "id": "browser-auth",
+      "status": "passed",
+      "actual": "键盘/标签/三态/触控/系统外观/文字缩放/减少动态/对比度；详见浏览器结果",
+      "evidence_paths": [
+        "证据/browser-results.json"
+      ]
+    },
+    {
+      "id": "compose-browser-auth",
+      "status": "passed",
+      "actual": "键盘/标签/三态/触控/系统外观/文字缩放/减少动态/对比度；详见浏览器结果",
+      "evidence_paths": [
+        "证据/compose-browser-results.json"
+      ]
+    }
+  ],
+  "dependencies": {
+    "real": [
+      "隔离测试 PostgreSQL",
+      "独立 IdP 进程",
+      "受信任 HTTPS",
+      "Chrome",
+      "VM Compose"
+    ],
+    "test_fixtures": [
+      "守卫测试的资源记录",
+      "恶意签名/声明的负向 JWT 夹具"
+    ],
+    "not_used": [
+      "真实企业认证平台",
+      "模型 API"
+    ]
+  }
+}

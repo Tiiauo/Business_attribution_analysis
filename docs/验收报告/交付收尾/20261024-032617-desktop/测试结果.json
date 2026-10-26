@@ -1,0 +1,511 @@
+{
+  "module_id": "M07-delivery-supplement",
+  "run_id": "20261024-032617-desktop",
+  "status": "passed",
+  "finished_at": "2026-10-24T03:48:21.592556+08:00",
+  "scope": [
+    "canonical_https443",
+    "real_backup_restore",
+    "desktop_only_ui",
+    "windows_macos_samples",
+    "pencil_text_sync"
+  ],
+  "source_revision": {
+    "agent.md": "6a5be27acc56e5f10f2f0655c51d2d9ab7f86a9aadfa894473f8dabdb4050fc6",
+    "backend/app/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "backend/app/admin.py": "3cf627720d44183bb0c83e9a315815e52f7c6459ef0c6d7f4116dac6a6eea891",
+    "backend/app/analysis.py": "93acb2604aadf8143de5ef00b8b029c38cfaf554f3f7a09ad86be34f6a01413f",
+    "backend/app/analysis_tools.py": "7ecdeda133e31019414826ccc0aca0fbf51fa1a97459529052bda13ee8a34a88",
+    "backend/app/attachment_parser.py": "378c6a031f50ab38037c636fcbcd9101f26baf5d9d8e3fe8053d19549bf742bc",
+    "backend/app/attachments.py": "a9e7f90d938ad131462542aab3f364dd8a6744ff8ca607211d26be1246b0cb3a",
+    "backend/app/auth.py": "3e939ba3caf8fa138476a40b1e42b5a6132040c120dfd12a74e28ca46e1d25c7",
+    "backend/app/bootstrap.py": "bb0e5fdf6f6b7ef210da1e458c7edec6ab4e9700f62292d657dab5e9cb18d08d",
+    "backend/app/chat.py": "3a3802e62d02d906b703e92ea9c38d275886ed85f5b7026b4ba50f3d2e9ba701",
+    "backend/app/contracts.py": "9a10a853dfd814e873fb1726d2c6ff62c800baa66521c51be9e55e0376ad93a6",
+    "backend/app/core/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "backend/app/core/audit.py": "9572a57b97af6b49152be601ebea25e1e5256864a2f90fab166ca29755e3b7ca",
+    "backend/app/core/config.py": "c88eabffec90e405dd0f13b7fae3f530f693c1067e4a154eba0fe6479df8163d",
+    "backend/app/core/database.py": "8613530c393ae3a4f65d07aa9d5c037583259ac9333e5f5bbd9c5be61f6352d7",
+    "backend/app/core/errors.py": "5c6ffc3e3fb679c9302febf50913dc43a6f815fd565dcfeea752770b4b4f6286",
+    "backend/app/core/security.py": "7ff0f1b890a5eb0f3d13f64ed0812928b151b4ac8cb1910fd6ee182177091a91",
+    "backend/app/credentials.py": "500828f604b1dff1cd488feb950021f9eb4d6eb411e90c63adcdc51661856d9f",
+    "backend/app/file_worker.py": "49fc2d225e92cc3032fd2a0988bacd0d5c763725a219beb1865cadc08ef7d9ed",
+    "backend/app/main.py": "59573b06d9227ed576993ba284003ca3fa2c6d2baef514c32ff8aca385ef61b7",
+    "backend/app/model_client.py": "254024092f475d2e2271b5132341935ab43b79e11afa2256f17a6ed4b4701775",
+    "backend/app/models.py": "4613302cba64e39a82c568342eddde3af04ce102dad658cadd9a5920ead65452",
+    "backend/app/provenance.py": "86995ee49aa9d000d21441a682a6cee3e828167842263d98aef53fe14f75b4c2",
+    "backend/app/reports.py": "d6393c3f8154166c9d22fdafb7a447e6b8f9178034f88657d92b11da46cf2014",
+    "backend/app/runtime.py": "cf93f9d8657a5c8517e265260decffb581cbc820264a5f4c16edb77602498b3e",
+    "backend/app/sample_data.py": "98030c995cb44f0b3acc001aff0454362a535cec52ddfb0dd3b4891225bc3e58",
+    "backend/app/sandbox.py": "0816ad5ecf899cc9304bc0a316c469078b341089ea1589de500464a9442cf0a1",
+    "backend/app/task_events.py": "e3d1de911f63eee3f7e35ce01ab46aba4f08f5d14869b2cc2f9b384c8a563036",
+    "backend/app/tasks.py": "918be2511bf9ae8b4677a53706b8b6614454a4159beb492b4aff7e8a8f9f2fed",
+    "backend/app/worker.py": "a73ebed413250e828f6d076138fb78bc10608e3e72cde3c0f85f9af0768e635c",
+    "backend/demo_auth/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "backend/demo_auth/main.py": "ded226c4368931cc0af4aae0ad553bacbbf5790aa532382db523e7393c050e97",
+    "backend/demo_auth/passwords.py": "87aaca83ca0800d587a3f34db80cca817a96ab03fc2e865cfee24155b99fd793",
+    "backend/migrations/env.py": "f86a911156e675fb0e178025999f5da04cf800d2fc24503671caa5f8d8949ced",
+    "backend/migrations/versions/0001_m01_initial_application_and_oidc_schema.py": "fc7d39b6007d3832a6e69e2a1abc7b2359c1133796ee0ac88180b4f938fb5133",
+    "backend/migrations/versions/0002_m01_integrity.py": "cbcb35a55191130492b0826c8c83c3ca2702141ff62c5b3c822d1a6ba5f01b99",
+    "backend/migrations/versions/0003_m02_runtime.py": "7e15530b46981066a9e00dd1a929e0ecb175507305a911054f8519cba37272f2",
+    "backend/tests/conftest.py": "31d4e56b141b3711bfb8323bdc3386b480300cd7f5abf9f474804325c0e3b020",
+    "backend/tests/fixtures/request-fingerprints.json": "1715ab46bcd622cc1119ebeabc1025e86a5a1132b7642132a59858087ce4e084",
+    "backend/tests/test_admin.py": "01f4ae01a2cf95b5afb52a963a169a0cd088a95ef5da8e8a6ac49396458a3327",
+    "backend/tests/test_analysis.py": "962ef0f908ab10798b532c079a378baceb1dad329c06c2b5668ed276bb27958c",
+    "backend/tests/test_attachments.py": "77388fc86932a782f3e8b2c6e390844519fb9d1b1b073d26fec204d59c9bbde4",
+    "backend/tests/test_auth.py": "e40023022e5fd55a90c28eaeb7b282ed11a86f3695d9339811df761cf0e02753",
+    "backend/tests/test_boundaries.py": "2461dbbb1ae93df3105f3f09534ebaafc2ecef8ff5190ec1619ca7d191c700fe",
+    "backend/tests/test_chat.py": "1568ea0801e5b48711829d75cc333b2b83b98bc5436a2f4d9aabb0df34c7e33d",
+    "backend/tests/test_files.py": "c932a53cb3d23826ec3a2a4163acd291db550f63584685a4f6c60776d9a89cbe",
+    "backend/tests/test_m06.py": "09a816405253e649133a03b60b50a132b548901a91a63a408b399d96c1177201",
+    "backend/tests/test_m07.py": "3c73b8a2f5d453c9d7a3c2480d8087941628d881b78b786f6698f9fa6815e2a2",
+    "backend/tests/test_model_client.py": "5f2661e7b6888dd895dbce2030bf15eba4f80f5e72a2dcfab98cc0b02b489bc7",
+    "backend/tests/test_reports.py": "8a8e3dfdd756db296feb41242fefbc3529ef8ad644b7e88826edabc8ac610734",
+    "backend/tests/test_sample_edges.py": "053fbbe96d35d082456f59771f0ea36ffa67ab8ba0e49adfc53ee910eb1fb8bd",
+    "backend/tests/test_tasks.py": "be4fff438066204562a98fab3ec19dfd902e3f608a49c4aa6dfe5a74449ca719",
+    "Caddyfile": "68b6ab7718ba9b867bb30b63e57961170a54ed4f8d995e0dbaa40f1e8b5612fc",
+    "compose.yml": "14aed2a1079de30ecfb17cf0171c637a4d36a3b8b62ccacd2c7b396cf6e27213",
+    "Dockerfile": "eb887b00693d77bf8d80fac6710f6942206d315cfb8981bc6c07f8f6e3ba580a",
+    "Dockerfile.gateway": "298342cf04f4d4dfc9053935676963c2f40b1473726e8f228a94d8e09a07f8a8",
+    "docs/contracts/schemas.json": "659256b3868ece3eddab1c93fddce82079d1a5675b3b50e61a3ab5589dd593f9",
+    "docs/design/desktop-only/review.md": "68b707e0b72670ed3fe87e132233f96d9061368c8b665bc80b215537a8858504",
+    "docs/M01接口与认证.md": "e61c1911736ae745cc34b3fd33062a1af4a91613d4772d4eb4bfa38c7266d654",
+    "docs/M02数据字典.md": "5ef892dc886e790953616a9d230f617f2ebd44336cc9af1720f98ee5a11d8b95",
+    "docs/M02配置与管理.md": "dbcf4da78a19179bba0684881e57b172c7dbb76d5278ca616bd69cf9bf4e0912",
+    "docs/M03会话与历史.md": "403781caada90649d4c7247dafe226c8678c48d2d3717d3e8b36a64b83c1f068",
+    "docs/M04任务与实时.md": "372e1394e8ffd17e43ff8aefcf9025fe28c5e1e6b2c3f58454f7dfda43214216",
+    "docs/M05分析与工具.md": "a4babe1c82bab2675c202d6fcca2d46bab4e68a8f5a0ea0979fe63763b10ce3a",
+    "docs/M06结果与清理.md": "0453f6b195f3e0d14f8ab14ee9663f00228c8a0867c0104b0f62695eff3ff230",
+    "docs/M07集成与交付.md": "912aea3fd33f8ef4097b739b307ec880587ab3af643ac0f76ff4ec72964b26b8",
+    "docs/备份与恢复.md": "c0f7fa3ff022e97d52dc948232ebdcb55523802c9a06491b172fd0744911dc75",
+    "frontend/package-lock.json": "6b9469986aebca58306cc40aba2090fa327675acdf5dd33e35db92e0499ea9f1",
+    "frontend/package.json": "f1b04aac040bc3b685a3b6f7f5bf43889fcfa9b92ce9ce05070ed8d34d1a5c8c",
+    "frontend/playwright.config.ts": "671ffbe8671d63196924d087d154a7051a6377162d861de89a62bbe848fb222b",
+    "frontend/public/admin.css": "b8cf107b556e923efc231293d44c3368a28314b70938b8334520014ec5caee38",
+    "frontend/public/auth.css": "a33991465d602d1d0864f72faeec2a22f1552e91bf11797d3ed0a066e5bfc3b6",
+    "frontend/src/admin.tsx": "1489ccafb2559cb33c8130d57225da599078fa17f9f44d68e9ecd253e79292fd",
+    "frontend/src/attachments.tsx": "6c008fdd57be369e916a8a3901f6633b71133fa33121d78d2df2261e5de13e19",
+    "frontend/src/contracts.ts": "9c937e6d2bd1a980b1a8e5e396d1faec5c179204924b1aa684ee5f2b87679856",
+    "frontend/src/main.tsx": "8007dabbaf41108ab6c0001e502aacd51637ed5342e021b51b77685d0e6bf8fa",
+    "frontend/src/styles.css": "42070e0b45bb201b2b838a52aaaa6e965f964e0b542d97f1fe517fe59c4b75a8",
+    "frontend/src/task-session.ts": "944dbb3a5ab2e90752c1bf5b4183090d4b046c0b99d64d9b5fb0adf8b3fa23b7",
+    "frontend/src/workbench.css": "3ed77a417df135c0fc1e2704c731b4368c3c41196a88df3c81b15af04148f112",
+    "frontend/src/workbench.tsx": "b036cc723e4ed7a6793ba1d8bb8886f62b157ab7da8db89a1166fc47d4eb982a",
+    "frontend/tests/design-parity.spec.ts": "7355d8c95c8ffc411542d31e997f2aae30b5b43adcf5d132867c3d7a79b72efa",
+    "frontend/tests/m01.spec.ts": "e25a196cbd9e3b8d489fb8dda4f8bde70567a4351f335beeee1f39eecafe2ef2",
+    "frontend/tests/m02.spec.ts": "5c2371977fffcde6298c9382534ca7bb195bebc691da8386d5edc20f43f7ccb9",
+    "frontend/tests/m03.spec.ts": "665df35561c3eeb3895d631916286b5528e1f34dfcf202d177eb08c331a65cee",
+    "frontend/tests/m05.spec.ts": "39043acd358ece823520acd3b714dd24f4da5c521c0a6210e082114d66dff94c",
+    "frontend/tests/m06.spec.ts": "f9fb1df4e46b2064d9347f4d8d3ceb2d36b62a5b0aac596b35e03a74dc96a2f7",
+    "frontend/tests/m07.spec.ts": "01fefc645539df6b82403b30078b0fbb4266e95d0919663acb4973adef75739c",
+    "PRD.md": "7cee3d87436d3377b28d0777bf69deb82347e6bf0bb39749ec272043e8e51939",
+    "pyproject.toml": "e0ce9d08e8ed27f03b744925e64658e84f9536d506b968af59a39b4b9c3abe80",
+    "README.md": "03fe22f7351d2c4d61b482e6e97a53a2d57bb8aecb2bc0265527269816865187",
+    "samples/boundaries.json": "1368c3dc16cd9a4482c5a37043fee67e8322a6e3b1f471bb686d736f165101be",
+    "samples/demos/client_error_summary.csv": "28fb615d4f2297d86e1b8c68a6bb2573500f968565cbf62a7fc0f7273fc01059",
+    "samples/demos/promotion_calendar.md": "69959b86dae5819a51d0798ba857e290531e8b147fcb631e77419236e1e685da",
+    "samples/demos/README.md": "a9525d8c6e08cc27c9f78cd68f8db3787cf65993c04f08e57c2aab680be253be",
+    "samples/queries/behavior.sql": "2c46673affe7b85b5fd8108303c8a7878803e2d5a63ddaeba2cd6e4bd75104e2",
+    "samples/queries/market-quality.sql": "ec0c870427245e959afdf451f5fa9d9fba914a10e3331ca411e56aa5e4bd6513",
+    "samples/queries/market.sql": "14fff9619ae9de3a3fb3f1b26f89bb9e0106fe97bc4df48218db02b18a533b6b",
+    "samples/queries/other-scenarios.sql": "88f43ec3bb0607e0b503e4a24d0afe0c033d5f29ae78c0cbbb030f4069a08bc7",
+    "scripts/backup-compose.py": "fb88137535753ff9f35706f6e07c553e2a44b76edacaebada9c0a0c844c95aa4",
+    "scripts/backup-probe.py": "89cbda8707518631607e6ec05f9f956a06749cf33f981bb51016c4ff94e9686a",
+    "scripts/caddy-assets.json": "1de013d712ad0e74586298e2c19b41ea61f7ccad07e94b6531440d99af223f4b",
+    "scripts/check-delivery.py": "c78b15829060b6bc48367e0e9a5b26513a74d9122ac2680191370d35f8c3883e",
+    "scripts/container-entry.py": "aa6a9ada8936a706670a5ca85b1c8de13169e5c752b04af47c1897663c811bf6",
+    "scripts/demo-m07.py": "8699e934fe8432851aa91acdabcd52a363563b6ef08e9c225f44470defa2cc3d",
+    "scripts/deploy-compose.ps1": "9971ad48855c4391b63f8fd418be8f583120d0c44c5680b74b2c323d9b606b9a",
+    "scripts/docker-tunnel.ps1": "e53a58cbba047ab71d45bf4bb32450e9c5619d2c845febfcb0895a775657aa9f",
+    "scripts/export-contracts.py": "95d3ef6c5e86fec65da0a9f92b277ca3f065c08a9fb85726f83f5fce1df2fb11",
+    "scripts/prepare.ps1": "327ae0f3c228c2638b65c6633bdef9b06bb439ad2724dc179068d1a20c2f350f",
+    "scripts/smoke-analysis.py": "07cd395618296fe35e3156c54e284c4fe1de8bbc423af0555b3fb2e5c86f8987",
+    "scripts/smoke-attachment.py": "20c0f1103c34ef22feac2c59c3af87b1eb95b29fe0715e486403f05b7c517acb",
+    "scripts/start-dev.ps1": "903f24ee4d8e6cbdbecf7b08a1b1d87e6cf7334c345d86bb9a67ba8eeae3e5b0",
+    "scripts/stop-dev.ps1": "823b9f05d56fc3fd0a3ecef1ae3108bc2fd044be0eab4813f40a8b08928af2ad",
+    "scripts/verify-compose.py": "6b1dddfee2dac4ef7359ba30c3d0a122116ed884cdd9194caf14a73462b2a7e1",
+    "scripts/verify.ps1": "0e739f48ea33eb5054e6cf6f45ce2a86ee440332fef7cfe687b4ae915ce8791a",
+    "scripts/verify.py": "b8f7fb0c0cd8b63c7e81fd76c76e463ee37e9049ab0ccc264ca9523aad695b53",
+    "scripts/verify_m07.py": "2ecd57f2b7586b0b4a3de6b72ed74ebb617c2feb5380e5f3f606a6ec4ea841b5",
+    "uv.lock": "eeb2a6bbe4a5e34be854833d7cc143ccd4bdd50c076417f02215f2b0cc4b7987",
+    "前端页面说明.md": "b19d3494a95094f5252acc0d9295c94e378330da75361ffb7d9933c30ea53f5f",
+    "技术设计与环境准备.md": "aa02bfd78e3ce976bebe4f70d4ce9b4d969f094c526f2c72d47e61bf6b6eadc1",
+    "项目要求.md": "8083bfc22377c7e830ced7efc404d96c9cb2844ddbdbc4586ccdadcc766149f5",
+    "项目规划.md": "855d892b6c3ba6af6edffb86d2491336e98ee90d8f5754ec77321aee5cdadad9",
+    "项目计划书.html": "5dbc43c3c9f40c1d28553424f54be3e0dd259e92bc0b0b75b323ea7071089fe5",
+    "项目计划书.test.cjs": "497f463f4d1e17a14551a053f676446f2a1864fd48c92287b77e16bca948e970",
+    "项目进度备份.json": "fdaaa7c6897c4cf58f75be890f6924615fbebf65ef053391c91394f5bf5b31d5",
+    "frontend/debug2.mts": "fcd8a0a7db549be66733b1863dbeb210be3d1b66e697f66eee730e9bc41f7e57",
+    "frontend/shots.mts": "32360cb42ca0a7d533c2e53335a1711cbd4477c27bec2ae3b78c9592e6dfd694"
+  },
+  "unchanged_since_M07_baseline": [
+    "backend/app/__init__.py",
+    "backend/app/admin.py",
+    "backend/app/analysis_tools.py",
+    "backend/app/attachment_parser.py",
+    "backend/app/attachments.py",
+    "backend/app/auth.py",
+    "backend/app/bootstrap.py",
+    "backend/app/chat.py",
+    "backend/app/contracts.py",
+    "backend/app/core/__init__.py",
+    "backend/app/core/audit.py",
+    "backend/app/core/config.py",
+    "backend/app/core/database.py",
+    "backend/app/core/errors.py",
+    "backend/app/core/security.py",
+    "backend/app/credentials.py",
+    "backend/app/file_worker.py",
+    "backend/app/main.py",
+    "backend/app/model_client.py",
+    "backend/app/models.py",
+    "backend/app/provenance.py",
+    "backend/app/reports.py",
+    "backend/app/runtime.py",
+    "backend/app/sandbox.py",
+    "backend/app/task_events.py",
+    "backend/app/tasks.py",
+    "backend/app/worker.py",
+    "backend/demo_auth/__init__.py",
+    "backend/demo_auth/main.py",
+    "backend/demo_auth/passwords.py",
+    "backend/migrations/env.py",
+    "backend/migrations/versions/0001_m01_initial_application_and_oidc_schema.py",
+    "backend/migrations/versions/0002_m01_integrity.py",
+    "backend/migrations/versions/0003_m02_runtime.py",
+    "backend/tests/conftest.py",
+    "backend/tests/fixtures/request-fingerprints.json",
+    "backend/tests/test_attachments.py",
+    "backend/tests/test_auth.py",
+    "backend/tests/test_boundaries.py",
+    "backend/tests/test_chat.py",
+    "backend/tests/test_files.py",
+    "backend/tests/test_m06.py",
+    "backend/tests/test_m07.py",
+    "backend/tests/test_model_client.py",
+    "backend/tests/test_reports.py",
+    "backend/tests/test_sample_edges.py",
+    "backend/tests/test_tasks.py",
+    "frontend/src/admin.tsx",
+    "frontend/src/attachments.tsx",
+    "frontend/src/contracts.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/styles.css",
+    "frontend/src/task-session.ts",
+    "frontend/tests/m07.spec.ts",
+    "samples/demos/promotion_calendar.md",
+    "samples/queries/behavior.sql",
+    "samples/queries/market-quality.sql",
+    "samples/queries/market.sql",
+    "samples/queries/other-scenarios.sql",
+    "scripts/caddy-assets.json",
+    "scripts/container-entry.py",
+    "scripts/deploy-compose.ps1",
+    "scripts/docker-tunnel.ps1",
+    "scripts/export-contracts.py",
+    "scripts/prepare.ps1",
+    "scripts/smoke-analysis.py",
+    "scripts/smoke-attachment.py",
+    "scripts/start-dev.ps1",
+    "scripts/stop-dev.ps1",
+    "scripts/verify-compose.py",
+    "scripts/verify.ps1"
+  ],
+  "baseline_report": "docs/验收报告/M07/20261024-022839-5d3bc01c/验收报告.md",
+  "baseline_acceptance": {
+    "ac_passed": 58,
+    "nfr_passed": 9,
+    "backend_passed": 102,
+    "browser_passed": 13,
+    "full_suite_rerun_in_this_supplement": false
+  },
+  "newly_executed": {
+    "affected_backend": 25,
+    "controlled_desktop_states": 31,
+    "deployed_browser": 13,
+    "offline_planner_checks": 24,
+    "accepted_real_model_results": 8
+  },
+  "checks": [
+    {
+      "id": "compose",
+      "status": "passed",
+      "seconds": 64.22,
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/verify-compose.py"
+      ],
+      "log": "compose.log"
+    },
+    {
+      "id": "browser",
+      "status": "passed",
+      "seconds": 26.02,
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "m01.spec.ts",
+        "m02.spec.ts",
+        "m03.spec.ts",
+        "m05.spec.ts",
+        "m06.spec.ts",
+        "--grep-invert",
+        "任务发送",
+        "--reporter=list,junit"
+      ],
+      "log": "browser.log"
+    },
+    {
+      "id": "delivery",
+      "status": "passed",
+      "seconds": 34.41,
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/check-delivery.py",
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\docs\\验收报告\\交付收尾\\20261024-032617-desktop\\证据"
+      ],
+      "log": "delivery.log"
+    },
+    {
+      "id": "demos-final-verify",
+      "status": "passed",
+      "seconds": 1.27,
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/demo-m07.py",
+        "--verify",
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.run\\m07-demos"
+      ],
+      "log": "demos-final-verify.log"
+    },
+    {
+      "id": "delivery-final",
+      "status": "passed",
+      "seconds": 34.2,
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/check-delivery.py",
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\docs\\验收报告\\交付收尾\\20261024-032617-desktop\\证据"
+      ],
+      "log": "delivery-final.log"
+    },
+    {
+      "id": "backup-restore",
+      "status": "passed",
+      "seconds": 238.97,
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/backup-compose.py",
+        "ba-m01-compose",
+        "--restore-check"
+      ],
+      "log": "backup-restore.log"
+    },
+    {
+      "id": "ruff",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "backend",
+        "scripts"
+      ],
+      "log": "ruff.log"
+    },
+    {
+      "id": "format",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "backend",
+        "scripts"
+      ],
+      "log": "format.log"
+    },
+    {
+      "id": "lock",
+      "status": "passed",
+      "command": [
+        "uv",
+        "lock",
+        "--check"
+      ],
+      "log": "lock.log"
+    },
+    {
+      "id": "packages",
+      "status": "passed",
+      "command": [
+        "uv",
+        "pip",
+        "check"
+      ],
+      "log": "packages.log"
+    },
+    {
+      "id": "contracts",
+      "status": "passed",
+      "command": [
+        "D:\\Tiiauo\\Documents\\经营归因分析系统\\.venv\\Scripts\\python.exe",
+        "scripts/export-contracts.py",
+        "--check"
+      ],
+      "log": "contracts.log"
+    }
+  ],
+  "demos": {
+    "behavior": {
+      "conversation_id": "3",
+      "task_ids": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "downloads": {
+        "markdown": "a742b2fce2b8c1caa2be3350ba3fc12417890fbd03332c23ad5e2a19c96792d9",
+        "html": "aee12ce13c420d5aaa71b406a206ef6ee1c471dd51e386607aa545c1ed19b682"
+      }
+    },
+    "market": {
+      "conversation_id": "5",
+      "task_ids": [
+        "10",
+        "11",
+        "12",
+        "16"
+      ],
+      "downloads": {
+        "markdown": "1966fea16a98e517b98f4b257aff16f34301346b42ec7321a7e0d926800aa420",
+        "html": "9fbacda2fe51ce23994b423770a9796300faff01e9d1ec1603ab04972b33131c"
+      }
+    },
+    "usage": {
+      "calls": 56,
+      "prompt_tokens": 543492,
+      "completion_tokens": 107857,
+      "cny_upper_estimate": 2.92476
+    },
+    "prior_cny_upper_estimate": 4.458585,
+    "cumulative_cny_upper_estimate": 7.383345,
+    "model_id": "deepseek-v4.1-flash",
+    "budget_cny": 66,
+    "runtime_digest": "9337ddbedd309abc01dee535c38dc1e704de8fe1b7e54598d9c0f2995bba328f",
+    "effective_context": {
+      "summary_max_tokens": 2048,
+      "recent_message_count": 10,
+      "context_window_tokens": 102400,
+      "summary_trigger_ratio": 0.8,
+      "response_reserved_tokens": 16384
+    }
+  },
+  "final_restore": {
+    "status": "passed",
+    "source_project": "ba-m01-compose",
+    "backup": "/home/secops/business-attribution/backups/ba-m01-compose-20261024-034129-3e82b2",
+    "restore_instance": "ba-restore-39084142a4dc",
+    "published_ports": [],
+    "databases": [
+      "ba_compose",
+      "ba_demo",
+      "postgres"
+    ],
+    "tables": 43,
+    "file_count": 42,
+    "credentials_decrypted": 7,
+    "source_logins": 6,
+    "verified": [
+      "all_table_rows_sha256",
+      "database_roles",
+      "application_files",
+      "caddy_files",
+      "key_files",
+      "encrypted_credentials",
+      "readonly_source_logins"
+    ],
+    "finished_at": "2026-10-24T03:44:48.039588+08:00"
+  },
+  "final_health": {
+    "status": "passed",
+    "public_url": "https://192.168.10.22",
+    "ready_status": 200,
+    "active_analysis_tasks": 0,
+    "services": [
+      {
+        "Service": "backend",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "ba-m01-app:0.1.0",
+        "Name": "ba-m01-compose-backend-1"
+      },
+      {
+        "Service": "db",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "postgres:16",
+        "Name": "ba-m01-compose-db-1"
+      },
+      {
+        "Service": "gateway",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "ba-m01-gateway:0.1.0",
+        "Name": "ba-m01-compose-gateway-1"
+      },
+      {
+        "Service": "idp",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "ba-m01-app:0.1.0",
+        "Name": "ba-m01-compose-idp-1"
+      },
+      {
+        "Service": "worker",
+        "State": "running",
+        "Health": "healthy",
+        "Image": "ba-m01-app:0.1.0",
+        "Name": "ba-m01-compose-worker-1"
+      }
+    ],
+    "all_eight_results_and_exports_revalidated_after_backup": true
+  },
+  "prototype_exports": {
+    "docs/design/desktop-only/reference/c1Kqt9.png": "87924d7ac48ef4d7f64238133d23d80a2124942dfdd921aed9d881dba4d9ac2b",
+    "docs/design/desktop-only/reference/e9ssri.png": "2f1fbc0b2ab2c371e8a58cd691b391fc03f706d06549c179a95f44e464159481",
+    "docs/design/desktop-only/reference/FiN0D.png": "886b7f40c2c20df701e22b45c846dbee14664dac373445814d69c225f64dec41",
+    "docs/design/desktop-only/reference/G4Juo.png": "26dd41f31ccd06a99adc682c65bf17daecb9f51a6db37f082aa1ec110a4cf8f2",
+    "docs/design/desktop-only/reference/i2XvJC.png": "d1f570ea6028a28cc977a512649a68751d1a81bcd042ce1bad14097568fede0c",
+    "docs/design/desktop-only/reference/j83KJM.png": "e5aef1ab84ebfde99f627b7643609b9c326da1ab310e444130bd732d2230cc98",
+    "docs/design/desktop-only/reference/K5uqj.png": "51efdb66ce03d059dd185f29b2d537fec2e8d5dd8cebdf22171c80c2a287d8b6",
+    "docs/design/desktop-only/reference/KErh2.png": "fc0161acbbdd7429d29355676372ddabb1859e36c6c4961b269f8e431a12fdf0",
+    "docs/design/desktop-only/reference/o3efUu.png": "390725c5f2f3fa7cc3ed31e2449d1602740c653b6215ae4337fd950dddc429c3",
+    "docs/design/desktop-only/reference/RZSyw.png": "19e18c7ff0d3c27538ff3ecc085cb69a99f79bfecd688cd8c3d95799c7896af0",
+    "docs/design/desktop-only/reference/t9gBQb.png": "c98c50a33ea93ab84c82e097a9715b819b1ef67cdb2c5d41a9ceba04425c04f5",
+    "docs/design/desktop-only/reference/xo3LA.png": "d1f570ea6028a28cc977a512649a68751d1a81bcd042ce1bad14097568fede0c"
+  },
+  "unaccepted_tasks": [
+    1,
+    2,
+    3,
+    4,
+    9,
+    13,
+    14,
+    15
+  ],
+  "limitations": [
+    "Git按用户要求未处理",
+    "本次未重跑全量102项后端或完整逐页视觉验收",
+    "供应商实际扣款未查询；累计费用为保守估算",
+    "未配置定时或异地备份",
+    "VM时钟比Windows约慢10862秒，未修改共享主机时钟",
+    "隔离恢复实例验证数据库、文件与密钥，未对外启动应用/认证网关；源交付实例的真实OIDC与下载另行通过"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "scope": "desktop workbench document overflow fix",
+  "finished_at": "2026-10-24T14:59:00.651881+08:00",
+  "source_revision": {
+    "frontend/src/workbench.css": "54a0b7e1dd3240c1025a56cc86476c045656000e635a632c511b488a09e00ccf",
+    "frontend/tests/design-parity.spec.ts": "bfa4bd1ac620c2d8025cbc267f99660c7c88a0f067e2312735861b1aa0cadc1e",
+    "前端页面说明.md": "6d5dd85e1526eb405f90491e72ab397f083698138d875f63b1ea8ab17cd3c6ed"
+  },
+  "build": {
+    "command": "npm run build",
+    "cwd": "frontend",
+    "exit_code": 0,
+    "typescript": "passed",
+    "bundle": "passed",
+    "assets_sha256": {
+      "frontend/dist/admin.css": "e9dacc52aefd5debd7dcd5f7637966c9f9b477cba3bfb762b6e62f298c99fb62",
+      "frontend/dist/auth.css": "914c7962d13e92222c7bd17adcac32fbf84e50efce47d8978d9181306fdc9e27",
+      "frontend/dist/index.html": "361813aa69924a73a18b78b33a2ed24c1a1a4482bb26583c29d453bececf9364",
+      "frontend/dist/assets/index-C3InWjxy.js": "268efbe168d4d26bbb5e178625fd4017bea1f98e5c37d38cf4f63cbb4e303321",
+      "frontend/dist/assets/index-kmq_TmWf.css": "927a8ad59a94408d8f213ed530d0e06f394de87f71bb62644f5dd497b232e8ca"
+    },
+    "warnings": "lucide-react use client directives reported by bundler; build completed"
+  },
+  "regression": {
+    "before_expected_failures": 4,
+    "after_passed": 7,
+    "after_failed": 0,
+    "viewports": [
+      [
+        1280,
+        800
+      ],
+      [
+        1600,
+        1000
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        2559,
+        1347
+      ]
+    ],
+    "xml": "证据/regression-after.xml"
+  },
+  "real_verification": {
+    "status": "passed",
+    "conversation_id": "73",
+    "tls_verification_enabled": true,
+    "records": [
+      {
+        "width": 1600,
+        "height": 1000,
+        "viewportHeight": 1000,
+        "pageHeight": 1000,
+        "scrollY": 0,
+        "toolbarTop": 0,
+        "composerBottom": 1000,
+        "history": {
+          "top": 5332,
+          "height": 656,
+          "contentHeight": 5988
+        },
+        "result": {
+          "top": 1556,
+          "height": 936,
+          "contentHeight": 2492
+        }
+      },
+      {
+        "width": 2559,
+        "height": 1347,
+        "viewportHeight": 1347,
+        "pageHeight": 1347,
+        "scrollY": 0,
+        "toolbarTop": 0,
+        "composerBottom": 1347,
+        "history": {
+          "top": 4844,
+          "height": 1003,
+          "contentHeight": 5847
+        },
+        "result": {
+          "top": 1209,
+          "height": 1283,
+          "contentHeight": 2492
+        }
+      }
+    ]
+  },
+  "implementation": "Add position:relative only to the existing .wb viewport frame; retain existing height, overflow, internal scrolling and screen-reader content.",
+  "prototype_reference": {
+    "screens": [
+      "05 工作台 xo3LA",
+      "10 结果报告 FiN0D"
+    ],
+    "basis": "Earlier prototype reads, user screenshot, and current frontend description section5.2; Pencil currently has no open file so no new prototype extraction.",
+    "new_full_visual_review": false
+  },
+  "limitations": [
+    "未部署虚拟机443交付实例",
+    "未执行全套前端原型/浏览器或后端验收",
+    "未运行真人读屏器测试；保留辅助说明并验证DOM文本存在",
+    "无新增模型调用"
+  ]
+}

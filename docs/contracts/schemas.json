@@ -1,0 +1,4895 @@
+{
+  "UserInfo": {
+    "properties": {
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "external_user_id": {
+        "title": "External User Id",
+        "type": "string"
+      },
+      "username": {
+        "title": "Username",
+        "type": "string"
+      },
+      "display_name": {
+        "title": "Display Name",
+        "type": "string"
+      },
+      "role": {
+        "enum": [
+          "analyst",
+          "admin"
+        ],
+        "title": "Role",
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "active",
+          "disabled"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "csrf_token": {
+        "title": "Csrf Token",
+        "type": "string"
+      },
+      "expires_at": {
+        "format": "date-time",
+        "title": "Expires At",
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "external_user_id",
+      "username",
+      "display_name",
+      "role",
+      "status",
+      "csrf_token",
+      "expires_at"
+    ],
+    "title": "UserInfo",
+    "type": "object"
+  },
+  "ErrorResponse": {
+    "properties": {
+      "code": {
+        "title": "Code",
+        "type": "string"
+      },
+      "message": {
+        "title": "Message",
+        "type": "string"
+      },
+      "request_id": {
+        "title": "Request Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "code",
+      "message",
+      "request_id"
+    ],
+    "title": "ErrorResponse",
+    "type": "object"
+  },
+  "Evidence": {
+    "$defs": {
+      "DatabaseLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "data_source_id": {
+            "minLength": 1,
+            "title": "Data Source Id",
+            "type": "string"
+          },
+          "database": {
+            "minLength": 1,
+            "title": "Database",
+            "type": "string"
+          },
+          "schema": {
+            "minLength": 1,
+            "title": "Schema",
+            "type": "string"
+          },
+          "query_text": {
+            "minLength": 1,
+            "title": "Query Text",
+            "type": "string"
+          },
+          "filter_summary": {
+            "minLength": 1,
+            "title": "Filter Summary",
+            "type": "string"
+          },
+          "extracted_at": {
+            "format": "date-time",
+            "title": "Extracted At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data_source_id",
+          "database",
+          "schema",
+          "query_text",
+          "filter_summary",
+          "extracted_at"
+        ],
+        "title": "DatabaseLocator",
+        "type": "object"
+      },
+      "FileLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "attachment_id": {
+            "minLength": 1,
+            "title": "Attachment Id",
+            "type": "string"
+          },
+          "file_name": {
+            "minLength": 1,
+            "title": "File Name",
+            "type": "string"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            ],
+            "minLength": 1,
+            "title": "Position"
+          }
+        },
+        "required": [
+          "attachment_id",
+          "file_name",
+          "position"
+        ],
+        "title": "FileLocator",
+        "type": "object"
+      },
+      "ToolLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "minLength": 1,
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "output_id": {
+            "minLength": 1,
+            "title": "Output Id",
+            "type": "string"
+          },
+          "output_kind": {
+            "enum": [
+              "stdout",
+              "file"
+            ],
+            "title": "Output Kind",
+            "type": "string"
+          },
+          "relative_path": {
+            "minLength": 1,
+            "title": "Relative Path",
+            "type": "string"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            ],
+            "minLength": 1,
+            "title": "Position"
+          },
+          "generated_at": {
+            "format": "date-time",
+            "title": "Generated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "tool_call_id",
+          "output_id",
+          "output_kind",
+          "relative_path",
+          "position",
+          "generated_at"
+        ],
+        "title": "ToolLocator",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "evidence_id": {
+        "minLength": 1,
+        "title": "Evidence Id",
+        "type": "string"
+      },
+      "source_type": {
+        "enum": [
+          "database",
+          "file",
+          "tool_output"
+        ],
+        "title": "Source Type",
+        "type": "string"
+      },
+      "source_name": {
+        "minLength": 1,
+        "title": "Source Name",
+        "type": "string"
+      },
+      "evidence_text": {
+        "description": "逐字复制已登记工具证据摘录，不改写数据或追加解释",
+        "minLength": 1,
+        "title": "Evidence Text",
+        "type": "string"
+      },
+      "related_metric": {
+        "description": "说明支撑的问题/指标和置信依据；解释放在这里或结论，不能增加第八个字段",
+        "minLength": 1,
+        "title": "Related Metric",
+        "type": "string"
+      },
+      "confidence": {
+        "enum": [
+          "high",
+          "medium",
+          "low"
+        ],
+        "title": "Confidence",
+        "type": "string"
+      },
+      "source_locator": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/DatabaseLocator"
+          },
+          {
+            "$ref": "#/$defs/FileLocator"
+          },
+          {
+            "$ref": "#/$defs/ToolLocator"
+          }
+        ],
+        "title": "Source Locator"
+      }
+    },
+    "required": [
+      "evidence_id",
+      "source_type",
+      "source_name",
+      "evidence_text",
+      "related_metric",
+      "confidence",
+      "source_locator"
+    ],
+    "title": "Evidence",
+    "type": "object"
+  },
+  "SubscriptionReady": {
+    "additionalProperties": false,
+    "properties": {
+      "type": {
+        "const": "subscription_ready",
+        "title": "Type",
+        "type": "string"
+      },
+      "conversation_id": {
+        "minLength": 1,
+        "title": "Conversation Id",
+        "type": "string"
+      },
+      "created_at": {
+        "format": "date-time",
+        "title": "Created At",
+        "type": "string"
+      }
+    },
+    "required": [
+      "type",
+      "conversation_id",
+      "created_at"
+    ],
+    "title": "SubscriptionReady",
+    "type": "object"
+  },
+  "TaskEvent": {
+    "$defs": {
+      "Done": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "done",
+            "title": "Type",
+            "type": "string"
+          },
+          "finished_at": {
+            "format": "date-time",
+            "title": "Finished At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "finished_at"
+        ],
+        "title": "Done",
+        "type": "object"
+      },
+      "ErrorEvent": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "error",
+            "title": "Type",
+            "type": "string"
+          },
+          "error_message": {
+            "title": "Error Message",
+            "type": "string"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "error_message",
+          "code"
+        ],
+        "title": "ErrorEvent",
+        "type": "object"
+      },
+      "ExportEvent": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "export_status",
+            "title": "Type",
+            "type": "string"
+          },
+          "format": {
+            "enum": [
+              "markdown",
+              "html"
+            ],
+            "title": "Format",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "not_generated",
+              "generating",
+              "success",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "format",
+          "status",
+          "error_message"
+        ],
+        "title": "ExportEvent",
+        "type": "object"
+      },
+      "MessageDelta": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "message_delta",
+            "title": "Type",
+            "type": "string"
+          },
+          "message_id": {
+            "minLength": 1,
+            "title": "Message Id",
+            "type": "string"
+          },
+          "seq_no": {
+            "minimum": 1,
+            "title": "Seq No",
+            "type": "integer"
+          },
+          "delta_text": {
+            "title": "Delta Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "message_id",
+          "seq_no",
+          "delta_text"
+        ],
+        "title": "MessageDelta",
+        "type": "object"
+      },
+      "MessageStart": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "message_start",
+            "title": "Type",
+            "type": "string"
+          },
+          "message_id": {
+            "minLength": 1,
+            "title": "Message Id",
+            "type": "string"
+          },
+          "seq_no": {
+            "minimum": 1,
+            "title": "Seq No",
+            "type": "integer"
+          },
+          "user_message_id": {
+            "minLength": 1,
+            "title": "User Message Id",
+            "type": "string"
+          },
+          "message_status": {
+            "const": "streaming",
+            "title": "Message Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "message_id",
+          "seq_no",
+          "user_message_id",
+          "message_status"
+        ],
+        "title": "MessageStart",
+        "type": "object"
+      },
+      "ResultReady": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "result_ready",
+            "title": "Type",
+            "type": "string"
+          },
+          "result_id": {
+            "minLength": 1,
+            "title": "Result Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "result_id"
+        ],
+        "title": "ResultReady",
+        "type": "object"
+      },
+      "TaskStatusEvent": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "task_status",
+            "title": "Type",
+            "type": "string"
+          },
+          "task_status": {
+            "enum": [
+              "queued",
+              "running",
+              "success",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Task Status",
+            "type": "string"
+          },
+          "current_step": {
+            "maxLength": 200,
+            "title": "Current Step",
+            "type": "string"
+          },
+          "cancel_requested_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cancel Requested At"
+          },
+          "is_cancelling": {
+            "title": "Is Cancelling",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "task_status",
+          "current_step",
+          "cancel_requested_at",
+          "is_cancelling"
+        ],
+        "title": "TaskStatusEvent",
+        "type": "object"
+      },
+      "ToolFinish": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "tool_finish",
+            "title": "Type",
+            "type": "string"
+          },
+          "message_id": {
+            "minLength": 1,
+            "title": "Message Id",
+            "type": "string"
+          },
+          "seq_no": {
+            "minimum": 1,
+            "title": "Seq No",
+            "type": "integer"
+          },
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "minLength": 1,
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "tool_status": {
+            "enum": [
+              "success",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Tool Status",
+            "type": "string"
+          },
+          "tool_result_summary": {
+            "title": "Tool Result Summary",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "message_id",
+          "seq_no",
+          "tool_name",
+          "tool_call_id",
+          "tool_status",
+          "tool_result_summary"
+        ],
+        "title": "ToolFinish",
+        "type": "object"
+      },
+      "ToolStart": {
+        "additionalProperties": true,
+        "properties": {
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "event_id": {
+            "minimum": 1,
+            "title": "Event Id",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "type": {
+            "const": "tool_start",
+            "title": "Type",
+            "type": "string"
+          },
+          "message_id": {
+            "minLength": 1,
+            "title": "Message Id",
+            "type": "string"
+          },
+          "seq_no": {
+            "minimum": 1,
+            "title": "Seq No",
+            "type": "integer"
+          },
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "minLength": 1,
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "tool_status": {
+            "const": "running",
+            "title": "Tool Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "task_id",
+          "event_id",
+          "created_at",
+          "type",
+          "message_id",
+          "seq_no",
+          "tool_name",
+          "tool_call_id",
+          "tool_status"
+        ],
+        "title": "ToolStart",
+        "type": "object"
+      }
+    },
+    "discriminator": {
+      "mapping": {
+        "done": "#/$defs/Done",
+        "error": "#/$defs/ErrorEvent",
+        "export_status": "#/$defs/ExportEvent",
+        "message_delta": "#/$defs/MessageDelta",
+        "message_start": "#/$defs/MessageStart",
+        "result_ready": "#/$defs/ResultReady",
+        "task_status": "#/$defs/TaskStatusEvent",
+        "tool_finish": "#/$defs/ToolFinish",
+        "tool_start": "#/$defs/ToolStart"
+      },
+      "propertyName": "type"
+    },
+    "oneOf": [
+      {
+        "$ref": "#/$defs/MessageStart"
+      },
+      {
+        "$ref": "#/$defs/MessageDelta"
+      },
+      {
+        "$ref": "#/$defs/ToolStart"
+      },
+      {
+        "$ref": "#/$defs/ToolFinish"
+      },
+      {
+        "$ref": "#/$defs/TaskStatusEvent"
+      },
+      {
+        "$ref": "#/$defs/ResultReady"
+      },
+      {
+        "$ref": "#/$defs/ErrorEvent"
+      },
+      {
+        "$ref": "#/$defs/Done"
+      },
+      {
+        "$ref": "#/$defs/ExportEvent"
+      }
+    ],
+    "title": "TaskEvent"
+  },
+  "SendRequest": {
+    "additionalProperties": false,
+    "properties": {
+      "conversation_id": {
+        "minLength": 1,
+        "title": "Conversation Id",
+        "type": "string"
+      },
+      "client_request_id": {
+        "pattern": "^[A-Za-z0-9_-]{1,128}$",
+        "title": "Client Request Id",
+        "type": "string"
+      },
+      "content": {
+        "maxLength": 20000,
+        "minLength": 1,
+        "title": "Content",
+        "type": "string"
+      },
+      "data_source_id": {
+        "minLength": 1,
+        "title": "Data Source Id",
+        "type": "string"
+      },
+      "task_kind": {
+        "default": "analysis",
+        "enum": [
+          "analysis",
+          "final_report"
+        ],
+        "title": "Task Kind",
+        "type": "string"
+      },
+      "attachment_ids": {
+        "items": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "title": "Attachment Ids",
+        "type": "array"
+      }
+    },
+    "required": [
+      "conversation_id",
+      "client_request_id",
+      "content",
+      "data_source_id"
+    ],
+    "title": "SendRequest",
+    "type": "object"
+  },
+  "HistoryPage": {
+    "$defs": {
+      "AttachmentSnapshot": {
+        "properties": {
+          "attachment_id": {
+            "minLength": 1,
+            "title": "Attachment Id",
+            "type": "string"
+          },
+          "file_name": {
+            "title": "File Name",
+            "type": "string"
+          },
+          "file_type": {
+            "title": "File Type",
+            "type": "string"
+          },
+          "file_size": {
+            "maximum": 20000000,
+            "minimum": 0,
+            "title": "File Size",
+            "type": "integer"
+          },
+          "uploaded_at": {
+            "format": "date-time",
+            "title": "Uploaded At",
+            "type": "string"
+          },
+          "parse_options": {
+            "$ref": "#/$defs/ParseOptions"
+          },
+          "available": {
+            "title": "Available",
+            "type": "boolean"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unavailable Reason"
+          },
+          "download_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Download Url"
+          }
+        },
+        "required": [
+          "attachment_id",
+          "file_name",
+          "file_type",
+          "file_size",
+          "uploaded_at",
+          "parse_options",
+          "available",
+          "unavailable_reason",
+          "download_url"
+        ],
+        "title": "AttachmentSnapshot",
+        "type": "object"
+      },
+      "ConversationInfo": {
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+          },
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 100,
+            "title": "Title",
+            "type": "string"
+          },
+          "title_source": {
+            "enum": [
+              "default",
+              "auto",
+              "manual"
+            ],
+            "title": "Title Source",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "archived",
+              "deleted"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "data_source_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Source Id"
+          },
+          "data_source_locked": {
+            "title": "Data Source Locked",
+            "type": "boolean"
+          },
+          "data_source_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Source Name"
+          },
+          "data_source_status": {
+            "enum": [
+              "enabled",
+              "disabled",
+              "removed",
+              "not_published",
+              "unselected"
+            ],
+            "title": "Data Source Status",
+            "type": "string"
+          },
+          "current_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Task Id"
+          },
+          "latest_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Task Id"
+          },
+          "can_retry": {
+            "title": "Can Retry",
+            "type": "boolean"
+          },
+          "cleanup_status": {
+            "enum": [
+              "none",
+              "queued",
+              "stopping",
+              "deleting_files",
+              "deleting_records",
+              "failed"
+            ],
+            "title": "Cleanup Status",
+            "type": "string"
+          },
+          "cleanup_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cleanup Error"
+          },
+          "cleanup_updated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cleanup Updated At"
+          },
+          "last_message_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Message At"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "conversation_id",
+          "title",
+          "title_source",
+          "status",
+          "data_source_id",
+          "data_source_locked",
+          "data_source_name",
+          "data_source_status",
+          "current_task_id",
+          "latest_task_id",
+          "can_retry",
+          "cleanup_status",
+          "cleanup_error",
+          "cleanup_updated_at",
+          "last_message_at",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "ConversationInfo",
+        "type": "object"
+      },
+      "InputReference": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "attachment",
+              "evidence",
+              "output"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "attachment_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Attachment Id"
+          },
+          "task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Task Id"
+          },
+          "evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Evidence Id"
+          },
+          "output_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Id"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "InputReference",
+        "type": "object"
+      },
+      "MessageInfo": {
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+          },
+          "message_id": {
+            "minLength": 1,
+            "title": "Message Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "user",
+              "assistant",
+              "tool"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "message_type": {
+            "enum": [
+              "user_input",
+              "assistant_text",
+              "tool_call"
+            ],
+            "title": "Message Type",
+            "type": "string"
+          },
+          "content": {
+            "title": "Content",
+            "type": "string"
+          },
+          "seq_no": {
+            "minimum": 1,
+            "title": "Seq No",
+            "type": "integer"
+          },
+          "message_status": {
+            "enum": [
+              "streaming",
+              "complete",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Message Status",
+            "type": "string"
+          },
+          "tool_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tool Name"
+          },
+          "tool_status": {
+            "anyOf": [
+              {
+                "enum": [
+                  "running",
+                  "success",
+                  "failed",
+                  "cancelled"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tool Status"
+          },
+          "tool_call_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tool Call Id"
+          },
+          "tool_input": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tool Input"
+          },
+          "tool_outputs": {
+            "items": {
+              "$ref": "#/$defs/ToolOutput"
+            },
+            "title": "Tool Outputs",
+            "type": "array"
+          },
+          "attachments": {
+            "items": {
+              "$ref": "#/$defs/AttachmentSnapshot"
+            },
+            "title": "Attachments",
+            "type": "array"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "message_id",
+          "task_id",
+          "role",
+          "message_type",
+          "content",
+          "seq_no",
+          "message_status",
+          "tool_name",
+          "tool_status",
+          "tool_call_id",
+          "tool_input",
+          "tool_outputs",
+          "attachments",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "MessageInfo",
+        "type": "object"
+      },
+      "ParseOptions": {
+        "additionalProperties": false,
+        "properties": {
+          "has_header": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Has Header"
+          }
+        },
+        "title": "ParseOptions",
+        "type": "object"
+      },
+      "ToolOutput": {
+        "properties": {
+          "output_id": {
+            "minLength": 1,
+            "title": "Output Id",
+            "type": "string"
+          },
+          "output_kind": {
+            "enum": [
+              "stdout",
+              "file"
+            ],
+            "title": "Output Kind",
+            "type": "string"
+          },
+          "relative_path": {
+            "title": "Relative Path",
+            "type": "string"
+          },
+          "generated_at": {
+            "format": "date-time",
+            "title": "Generated At",
+            "type": "string"
+          },
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "input_refs": {
+            "items": {
+              "$ref": "#/$defs/InputReference"
+            },
+            "minItems": 1,
+            "title": "Input Refs",
+            "type": "array"
+          },
+          "retention_kind": {
+            "enum": [
+              "input_copy",
+              "derived"
+            ],
+            "title": "Retention Kind",
+            "type": "string"
+          },
+          "available": {
+            "title": "Available",
+            "type": "boolean"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unavailable Reason"
+          }
+        },
+        "required": [
+          "output_id",
+          "output_kind",
+          "relative_path",
+          "generated_at",
+          "content_sha256",
+          "input_refs",
+          "retention_kind",
+          "available",
+          "unavailable_reason"
+        ],
+        "title": "ToolOutput",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "items": {
+        "items": {
+          "$ref": "#/$defs/MessageInfo"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "next_cursor": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "conversation": {
+        "$ref": "#/$defs/ConversationInfo"
+      },
+      "snapshot_max_seq_no": {
+        "minimum": 0,
+        "title": "Snapshot Max Seq No",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "items",
+      "next_cursor",
+      "conversation",
+      "snapshot_max_seq_no"
+    ],
+    "title": "HistoryPage",
+    "type": "object"
+  },
+  "AttachmentPage": {
+    "$defs": {
+      "AttachmentInfo": {
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+          },
+          "attachment_id": {
+            "minLength": 1,
+            "title": "Attachment Id",
+            "type": "string"
+          },
+          "conversation_id": {
+            "minLength": 1,
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "message_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Message Id"
+          },
+          "file_name": {
+            "title": "File Name",
+            "type": "string"
+          },
+          "file_path": {
+            "title": "File Path",
+            "type": "string"
+          },
+          "file_type": {
+            "title": "File Type",
+            "type": "string"
+          },
+          "file_size": {
+            "title": "File Size",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          },
+          "parse_status": {
+            "enum": [
+              "pending",
+              "parsing",
+              "success",
+              "failed"
+            ],
+            "title": "Parse Status",
+            "type": "string"
+          },
+          "parse_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parse Error"
+          },
+          "parse_options": {
+            "$ref": "#/$defs/ParseOptions"
+          },
+          "parse_summary": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parse Summary"
+          },
+          "delete_status": {
+            "enum": [
+              "none",
+              "deleting",
+              "failed"
+            ],
+            "title": "Delete Status",
+            "type": "string"
+          },
+          "delete_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Delete Error"
+          },
+          "can_retry": {
+            "title": "Can Retry",
+            "type": "boolean"
+          },
+          "download_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Download Url"
+          }
+        },
+        "required": [
+          "id",
+          "attachment_id",
+          "conversation_id",
+          "message_id",
+          "file_name",
+          "file_path",
+          "file_type",
+          "file_size",
+          "created_at",
+          "updated_at",
+          "parse_status",
+          "parse_error",
+          "parse_options",
+          "parse_summary",
+          "delete_status",
+          "delete_error",
+          "can_retry",
+          "download_url"
+        ],
+        "title": "AttachmentInfo",
+        "type": "object"
+      },
+      "ParseOptions": {
+        "additionalProperties": false,
+        "properties": {
+          "has_header": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Has Header"
+          }
+        },
+        "title": "ParseOptions",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "items": {
+        "items": {
+          "$ref": "#/$defs/AttachmentInfo"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "next_cursor": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "total_bytes": {
+        "title": "Total Bytes",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "items",
+      "next_cursor",
+      "total_bytes"
+    ],
+    "title": "AttachmentPage",
+    "type": "object"
+  },
+  "TaskSnapshot": {
+    "$defs": {
+      "AttachmentSnapshot": {
+        "properties": {
+          "attachment_id": {
+            "minLength": 1,
+            "title": "Attachment Id",
+            "type": "string"
+          },
+          "file_name": {
+            "title": "File Name",
+            "type": "string"
+          },
+          "file_type": {
+            "title": "File Type",
+            "type": "string"
+          },
+          "file_size": {
+            "maximum": 20000000,
+            "minimum": 0,
+            "title": "File Size",
+            "type": "integer"
+          },
+          "uploaded_at": {
+            "format": "date-time",
+            "title": "Uploaded At",
+            "type": "string"
+          },
+          "parse_options": {
+            "$ref": "#/$defs/ParseOptions"
+          },
+          "available": {
+            "title": "Available",
+            "type": "boolean"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unavailable Reason"
+          },
+          "download_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Download Url"
+          }
+        },
+        "required": [
+          "attachment_id",
+          "file_name",
+          "file_type",
+          "file_size",
+          "uploaded_at",
+          "parse_options",
+          "available",
+          "unavailable_reason",
+          "download_url"
+        ],
+        "title": "AttachmentSnapshot",
+        "type": "object"
+      },
+      "ExportInfo": {
+        "properties": {
+          "status": {
+            "enum": [
+              "not_generated",
+              "generating",
+              "success",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message"
+          },
+          "generated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Generated At"
+          }
+        },
+        "required": [
+          "status",
+          "error_message",
+          "generated_at"
+        ],
+        "title": "ExportInfo",
+        "type": "object"
+      },
+      "ExportStates": {
+        "properties": {
+          "markdown": {
+            "$ref": "#/$defs/ExportInfo"
+          },
+          "html": {
+            "$ref": "#/$defs/ExportInfo"
+          }
+        },
+        "required": [
+          "markdown",
+          "html"
+        ],
+        "title": "ExportStates",
+        "type": "object"
+      },
+      "InputReference": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "attachment",
+              "evidence",
+              "output"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "attachment_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Attachment Id"
+          },
+          "task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Task Id"
+          },
+          "evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Evidence Id"
+          },
+          "output_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output Id"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "InputReference",
+        "type": "object"
+      },
+      "MessageInfo": {
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+          },
+          "message_id": {
+            "minLength": 1,
+            "title": "Message Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "user",
+              "assistant",
+              "tool"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "message_type": {
+            "enum": [
+              "user_input",
+              "assistant_text",
+              "tool_call"
+            ],
+            "title": "Message Type",
+            "type": "string"
+          },
+          "content": {
+            "title": "Content",
+            "type": "string"
+          },
+          "seq_no": {
+            "minimum": 1,
+            "title": "Seq No",
+            "type": "integer"
+          },
+          "message_status": {
+            "enum": [
+              "streaming",
+              "complete",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Message Status",
+            "type": "string"
+          },
+          "tool_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tool Name"
+          },
+          "tool_status": {
+            "anyOf": [
+              {
+                "enum": [
+                  "running",
+                  "success",
+                  "failed",
+                  "cancelled"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tool Status"
+          },
+          "tool_call_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tool Call Id"
+          },
+          "tool_input": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tool Input"
+          },
+          "tool_outputs": {
+            "items": {
+              "$ref": "#/$defs/ToolOutput"
+            },
+            "title": "Tool Outputs",
+            "type": "array"
+          },
+          "attachments": {
+            "items": {
+              "$ref": "#/$defs/AttachmentSnapshot"
+            },
+            "title": "Attachments",
+            "type": "array"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "message_id",
+          "task_id",
+          "role",
+          "message_type",
+          "content",
+          "seq_no",
+          "message_status",
+          "tool_name",
+          "tool_status",
+          "tool_call_id",
+          "tool_input",
+          "tool_outputs",
+          "attachments",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "MessageInfo",
+        "type": "object"
+      },
+      "ParseOptions": {
+        "additionalProperties": false,
+        "properties": {
+          "has_header": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Has Header"
+          }
+        },
+        "title": "ParseOptions",
+        "type": "object"
+      },
+      "ToolOutput": {
+        "properties": {
+          "output_id": {
+            "minLength": 1,
+            "title": "Output Id",
+            "type": "string"
+          },
+          "output_kind": {
+            "enum": [
+              "stdout",
+              "file"
+            ],
+            "title": "Output Kind",
+            "type": "string"
+          },
+          "relative_path": {
+            "title": "Relative Path",
+            "type": "string"
+          },
+          "generated_at": {
+            "format": "date-time",
+            "title": "Generated At",
+            "type": "string"
+          },
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "input_refs": {
+            "items": {
+              "$ref": "#/$defs/InputReference"
+            },
+            "minItems": 1,
+            "title": "Input Refs",
+            "type": "array"
+          },
+          "retention_kind": {
+            "enum": [
+              "input_copy",
+              "derived"
+            ],
+            "title": "Retention Kind",
+            "type": "string"
+          },
+          "available": {
+            "title": "Available",
+            "type": "boolean"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unavailable Reason"
+          }
+        },
+        "required": [
+          "output_id",
+          "output_kind",
+          "relative_path",
+          "generated_at",
+          "content_sha256",
+          "input_refs",
+          "retention_kind",
+          "available",
+          "unavailable_reason"
+        ],
+        "title": "ToolOutput",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "task_id": {
+        "minLength": 1,
+        "title": "Task Id",
+        "type": "string"
+      },
+      "conversation_id": {
+        "minLength": 1,
+        "title": "Conversation Id",
+        "type": "string"
+      },
+      "message_id": {
+        "minLength": 1,
+        "title": "Message Id",
+        "type": "string"
+      },
+      "assistant_message_id": {
+        "anyOf": [
+          {
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Assistant Message Id"
+      },
+      "config_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Config Version"
+      },
+      "final_report_scope": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Final Report Scope"
+      },
+      "task_status": {
+        "enum": [
+          "queued",
+          "running",
+          "success",
+          "failed",
+          "cancelled"
+        ],
+        "title": "Task Status",
+        "type": "string"
+      },
+      "task_kind": {
+        "enum": [
+          "analysis",
+          "final_report"
+        ],
+        "title": "Task Kind",
+        "type": "string"
+      },
+      "current_step": {
+        "maxLength": 200,
+        "title": "Current Step",
+        "type": "string"
+      },
+      "cancel_requested_at": {
+        "anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Cancel Requested At"
+      },
+      "is_cancelling": {
+        "title": "Is Cancelling",
+        "type": "boolean"
+      },
+      "result_id": {
+        "anyOf": [
+          {
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Result Id"
+      },
+      "messages": {
+        "items": {
+          "$ref": "#/$defs/MessageInfo"
+        },
+        "title": "Messages",
+        "type": "array"
+      },
+      "export_status": {
+        "$ref": "#/$defs/ExportStates"
+      },
+      "last_event_id": {
+        "minimum": 0,
+        "title": "Last Event Id",
+        "type": "integer"
+      },
+      "created_at": {
+        "format": "date-time",
+        "title": "Created At",
+        "type": "string"
+      },
+      "started_at": {
+        "anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Started At"
+      },
+      "finished_at": {
+        "anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Finished At"
+      },
+      "error_message": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Error Message"
+      }
+    },
+    "required": [
+      "task_id",
+      "conversation_id",
+      "message_id",
+      "assistant_message_id",
+      "config_version",
+      "final_report_scope",
+      "task_status",
+      "task_kind",
+      "current_step",
+      "cancel_requested_at",
+      "is_cancelling",
+      "result_id",
+      "messages",
+      "export_status",
+      "last_event_id",
+      "created_at",
+      "started_at",
+      "finished_at",
+      "error_message"
+    ],
+    "title": "TaskSnapshot",
+    "type": "object"
+  },
+  "AnalysisOutput": {
+    "$defs": {
+      "DatabaseLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "data_source_id": {
+            "minLength": 1,
+            "title": "Data Source Id",
+            "type": "string"
+          },
+          "database": {
+            "minLength": 1,
+            "title": "Database",
+            "type": "string"
+          },
+          "schema": {
+            "minLength": 1,
+            "title": "Schema",
+            "type": "string"
+          },
+          "query_text": {
+            "minLength": 1,
+            "title": "Query Text",
+            "type": "string"
+          },
+          "filter_summary": {
+            "minLength": 1,
+            "title": "Filter Summary",
+            "type": "string"
+          },
+          "extracted_at": {
+            "format": "date-time",
+            "title": "Extracted At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data_source_id",
+          "database",
+          "schema",
+          "query_text",
+          "filter_summary",
+          "extracted_at"
+        ],
+        "title": "DatabaseLocator",
+        "type": "object"
+      },
+      "Evidence": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_id": {
+            "minLength": 1,
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "source_type": {
+            "enum": [
+              "database",
+              "file",
+              "tool_output"
+            ],
+            "title": "Source Type",
+            "type": "string"
+          },
+          "source_name": {
+            "minLength": 1,
+            "title": "Source Name",
+            "type": "string"
+          },
+          "evidence_text": {
+            "description": "逐字复制已登记工具证据摘录，不改写数据或追加解释",
+            "minLength": 1,
+            "title": "Evidence Text",
+            "type": "string"
+          },
+          "related_metric": {
+            "description": "说明支撑的问题/指标和置信依据；解释放在这里或结论，不能增加第八个字段",
+            "minLength": 1,
+            "title": "Related Metric",
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ],
+            "title": "Confidence",
+            "type": "string"
+          },
+          "source_locator": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DatabaseLocator"
+              },
+              {
+                "$ref": "#/$defs/FileLocator"
+              },
+              {
+                "$ref": "#/$defs/ToolLocator"
+              }
+            ],
+            "title": "Source Locator"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "source_type",
+          "source_name",
+          "evidence_text",
+          "related_metric",
+          "confidence",
+          "source_locator"
+        ],
+        "title": "Evidence",
+        "type": "object"
+      },
+      "FileLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "attachment_id": {
+            "minLength": 1,
+            "title": "Attachment Id",
+            "type": "string"
+          },
+          "file_name": {
+            "minLength": 1,
+            "title": "File Name",
+            "type": "string"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            ],
+            "minLength": 1,
+            "title": "Position"
+          }
+        },
+        "required": [
+          "attachment_id",
+          "file_name",
+          "position"
+        ],
+        "title": "FileLocator",
+        "type": "object"
+      },
+      "Metric": {
+        "additionalProperties": true,
+        "properties": {
+          "metric_name": {
+            "minLength": 1,
+            "title": "Metric Name",
+            "type": "string"
+          },
+          "metric_value": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metric Value"
+          },
+          "metric_unit": {
+            "description": "必填单位，metric_value为null时也必须填写，例如行/人/元/%",
+            "title": "Metric Unit",
+            "type": "string"
+          },
+          "metric_period": {
+            "description": "必填统计时期/范围，未知值也须明示范围或未确定",
+            "minLength": 1,
+            "title": "Metric Period",
+            "type": "string"
+          },
+          "calculation_note": {
+            "default": "",
+            "title": "Calculation Note",
+            "type": "string"
+          }
+        },
+        "required": [
+          "metric_name",
+          "metric_value",
+          "metric_unit",
+          "metric_period"
+        ],
+        "title": "Metric",
+        "type": "object"
+      },
+      "ToolLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "minLength": 1,
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "output_id": {
+            "minLength": 1,
+            "title": "Output Id",
+            "type": "string"
+          },
+          "output_kind": {
+            "enum": [
+              "stdout",
+              "file"
+            ],
+            "title": "Output Kind",
+            "type": "string"
+          },
+          "relative_path": {
+            "minLength": 1,
+            "title": "Relative Path",
+            "type": "string"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            ],
+            "minLength": 1,
+            "title": "Position"
+          },
+          "generated_at": {
+            "format": "date-time",
+            "title": "Generated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "tool_call_id",
+          "output_id",
+          "output_kind",
+          "relative_path",
+          "position",
+          "generated_at"
+        ],
+        "title": "ToolLocator",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "problem_definition": {
+        "minLength": 1,
+        "title": "Problem Definition",
+        "type": "string"
+      },
+      "key_metrics": {
+        "items": {
+          "$ref": "#/$defs/Metric"
+        },
+        "title": "Key Metrics",
+        "type": "array"
+      },
+      "evidence_list": {
+        "items": {
+          "$ref": "#/$defs/Evidence"
+        },
+        "title": "Evidence List",
+        "type": "array"
+      },
+      "conclusion_text": {
+        "minLength": 1,
+        "title": "Conclusion Text",
+        "type": "string"
+      },
+      "missing_data_text": {
+        "minLength": 1,
+        "title": "Missing Data Text",
+        "type": "string"
+      },
+      "next_action_text": {
+        "description": "至少两条不同建议，使用换行或分号分开，每条说明动作和待验证问题",
+        "minLength": 1,
+        "title": "Next Action Text",
+        "type": "string"
+      }
+    },
+    "required": [
+      "problem_definition",
+      "key_metrics",
+      "evidence_list",
+      "conclusion_text",
+      "missing_data_text",
+      "next_action_text"
+    ],
+    "title": "AnalysisOutput",
+    "type": "object"
+  },
+  "ResultInfo": {
+    "$defs": {
+      "DatabaseLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "data_source_id": {
+            "minLength": 1,
+            "title": "Data Source Id",
+            "type": "string"
+          },
+          "database": {
+            "minLength": 1,
+            "title": "Database",
+            "type": "string"
+          },
+          "schema": {
+            "minLength": 1,
+            "title": "Schema",
+            "type": "string"
+          },
+          "query_text": {
+            "minLength": 1,
+            "title": "Query Text",
+            "type": "string"
+          },
+          "filter_summary": {
+            "minLength": 1,
+            "title": "Filter Summary",
+            "type": "string"
+          },
+          "extracted_at": {
+            "format": "date-time",
+            "title": "Extracted At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data_source_id",
+          "database",
+          "schema",
+          "query_text",
+          "filter_summary",
+          "extracted_at"
+        ],
+        "title": "DatabaseLocator",
+        "type": "object"
+      },
+      "Evidence": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_id": {
+            "minLength": 1,
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "source_type": {
+            "enum": [
+              "database",
+              "file",
+              "tool_output"
+            ],
+            "title": "Source Type",
+            "type": "string"
+          },
+          "source_name": {
+            "minLength": 1,
+            "title": "Source Name",
+            "type": "string"
+          },
+          "evidence_text": {
+            "description": "逐字复制已登记工具证据摘录，不改写数据或追加解释",
+            "minLength": 1,
+            "title": "Evidence Text",
+            "type": "string"
+          },
+          "related_metric": {
+            "description": "说明支撑的问题/指标和置信依据；解释放在这里或结论，不能增加第八个字段",
+            "minLength": 1,
+            "title": "Related Metric",
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ],
+            "title": "Confidence",
+            "type": "string"
+          },
+          "source_locator": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DatabaseLocator"
+              },
+              {
+                "$ref": "#/$defs/FileLocator"
+              },
+              {
+                "$ref": "#/$defs/ToolLocator"
+              }
+            ],
+            "title": "Source Locator"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "source_type",
+          "source_name",
+          "evidence_text",
+          "related_metric",
+          "confidence",
+          "source_locator"
+        ],
+        "title": "Evidence",
+        "type": "object"
+      },
+      "ExportInfo": {
+        "properties": {
+          "status": {
+            "enum": [
+              "not_generated",
+              "generating",
+              "success",
+              "failed"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message"
+          },
+          "generated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Generated At"
+          }
+        },
+        "required": [
+          "status",
+          "error_message",
+          "generated_at"
+        ],
+        "title": "ExportInfo",
+        "type": "object"
+      },
+      "ExportStates": {
+        "properties": {
+          "markdown": {
+            "$ref": "#/$defs/ExportInfo"
+          },
+          "html": {
+            "$ref": "#/$defs/ExportInfo"
+          }
+        },
+        "required": [
+          "markdown",
+          "html"
+        ],
+        "title": "ExportStates",
+        "type": "object"
+      },
+      "FileLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "attachment_id": {
+            "minLength": 1,
+            "title": "Attachment Id",
+            "type": "string"
+          },
+          "file_name": {
+            "minLength": 1,
+            "title": "File Name",
+            "type": "string"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            ],
+            "minLength": 1,
+            "title": "Position"
+          }
+        },
+        "required": [
+          "attachment_id",
+          "file_name",
+          "position"
+        ],
+        "title": "FileLocator",
+        "type": "object"
+      },
+      "Metric": {
+        "additionalProperties": true,
+        "properties": {
+          "metric_name": {
+            "minLength": 1,
+            "title": "Metric Name",
+            "type": "string"
+          },
+          "metric_value": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metric Value"
+          },
+          "metric_unit": {
+            "description": "必填单位，metric_value为null时也必须填写，例如行/人/元/%",
+            "title": "Metric Unit",
+            "type": "string"
+          },
+          "metric_period": {
+            "description": "必填统计时期/范围，未知值也须明示范围或未确定",
+            "minLength": 1,
+            "title": "Metric Period",
+            "type": "string"
+          },
+          "calculation_note": {
+            "default": "",
+            "title": "Calculation Note",
+            "type": "string"
+          }
+        },
+        "required": [
+          "metric_name",
+          "metric_value",
+          "metric_unit",
+          "metric_period"
+        ],
+        "title": "Metric",
+        "type": "object"
+      },
+      "ToolLocator": {
+        "additionalProperties": true,
+        "properties": {
+          "source_task_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Task Id"
+          },
+          "source_evidence_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Evidence Id"
+          },
+          "available_at_result": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available At Result"
+          },
+          "unavailable_reason_at_result": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason At Result"
+          },
+          "available": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Available"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "deleting",
+                  "delete_failed",
+                  "deleted",
+                  "storage_missing",
+                  "attachment_deleted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Unavailable Reason"
+          },
+          "availability_checked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Availability Checked At"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "tool_call_id": {
+            "minLength": 1,
+            "title": "Tool Call Id",
+            "type": "string"
+          },
+          "output_id": {
+            "minLength": 1,
+            "title": "Output Id",
+            "type": "string"
+          },
+          "output_kind": {
+            "enum": [
+              "stdout",
+              "file"
+            ],
+            "title": "Output Kind",
+            "type": "string"
+          },
+          "relative_path": {
+            "minLength": 1,
+            "title": "Relative Path",
+            "type": "string"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            ],
+            "minLength": 1,
+            "title": "Position"
+          },
+          "generated_at": {
+            "format": "date-time",
+            "title": "Generated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "tool_call_id",
+          "output_id",
+          "output_kind",
+          "relative_path",
+          "position",
+          "generated_at"
+        ],
+        "title": "ToolLocator",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "problem_definition": {
+        "minLength": 1,
+        "title": "Problem Definition",
+        "type": "string"
+      },
+      "key_metrics": {
+        "items": {
+          "$ref": "#/$defs/Metric"
+        },
+        "title": "Key Metrics",
+        "type": "array"
+      },
+      "evidence_list": {
+        "items": {
+          "$ref": "#/$defs/Evidence"
+        },
+        "title": "Evidence List",
+        "type": "array"
+      },
+      "conclusion_text": {
+        "minLength": 1,
+        "title": "Conclusion Text",
+        "type": "string"
+      },
+      "missing_data_text": {
+        "minLength": 1,
+        "title": "Missing Data Text",
+        "type": "string"
+      },
+      "next_action_text": {
+        "description": "至少两条不同建议，使用换行或分号分开，每条说明动作和待验证问题",
+        "minLength": 1,
+        "title": "Next Action Text",
+        "type": "string"
+      },
+      "result_id": {
+        "minLength": 1,
+        "title": "Result Id",
+        "type": "string"
+      },
+      "task_id": {
+        "minLength": 1,
+        "title": "Task Id",
+        "type": "string"
+      },
+      "conversation_id": {
+        "minLength": 1,
+        "title": "Conversation Id",
+        "type": "string"
+      },
+      "task_kind": {
+        "enum": [
+          "analysis",
+          "final_report"
+        ],
+        "title": "Task Kind",
+        "type": "string"
+      },
+      "final_report_scope": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Final Report Scope"
+      },
+      "result_markdown": {
+        "title": "Result Markdown",
+        "type": "string"
+      },
+      "export_status": {
+        "$ref": "#/$defs/ExportStates"
+      },
+      "created_at": {
+        "format": "date-time",
+        "title": "Created At",
+        "type": "string"
+      }
+    },
+    "required": [
+      "problem_definition",
+      "key_metrics",
+      "evidence_list",
+      "conclusion_text",
+      "missing_data_text",
+      "next_action_text",
+      "result_id",
+      "task_id",
+      "conversation_id",
+      "task_kind",
+      "final_report_scope",
+      "result_markdown",
+      "export_status",
+      "created_at"
+    ],
+    "title": "ResultInfo",
+    "type": "object"
+  },
+  "ConfigState": {
+    "$defs": {
+      "AuthConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "issuer_url": {
+            "title": "Issuer Url",
+            "type": "string"
+          },
+          "issuer_internal_url": {
+            "title": "Issuer Internal Url",
+            "type": "string"
+          },
+          "client_id": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Client Id",
+            "type": "string"
+          },
+          "callback_url": {
+            "title": "Callback Url",
+            "type": "string"
+          },
+          "credential_ref": {
+            "title": "Credential Ref",
+            "type": "string"
+          },
+          "role_claim": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Role Claim",
+            "type": "string"
+          },
+          "role_mapping": {
+            "additionalProperties": {
+              "enum": [
+                "analyst",
+                "admin"
+              ],
+              "type": "string"
+            },
+            "minProperties": 1,
+            "title": "Role Mapping",
+            "type": "object"
+          }
+        },
+        "required": [
+          "issuer_url",
+          "issuer_internal_url",
+          "client_id",
+          "callback_url",
+          "credential_ref",
+          "role_claim",
+          "role_mapping"
+        ],
+        "title": "AuthConfig",
+        "type": "object"
+      },
+      "ContextConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "context_window_tokens": {
+            "anyOf": [
+              {
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Context Window Tokens"
+          },
+          "response_reserved_tokens": {
+            "default": 4096,
+            "minimum": 1,
+            "title": "Response Reserved Tokens",
+            "type": "integer"
+          },
+          "summary_trigger_ratio": {
+            "default": 0.8,
+            "exclusiveMaximum": 1,
+            "exclusiveMinimum": 0,
+            "title": "Summary Trigger Ratio",
+            "type": "number"
+          },
+          "summary_max_tokens": {
+            "default": 2048,
+            "minimum": 1,
+            "title": "Summary Max Tokens",
+            "type": "integer"
+          },
+          "recent_message_count": {
+            "default": 10,
+            "maximum": 1000,
+            "minimum": 1,
+            "title": "Recent Message Count",
+            "type": "integer"
+          }
+        },
+        "title": "ContextConfig",
+        "type": "object"
+      },
+      "ModelConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "api_url": {
+            "default": "",
+            "title": "Api Url",
+            "type": "string"
+          },
+          "model_id": {
+            "default": "",
+            "maxLength": 200,
+            "title": "Model Id",
+            "type": "string"
+          },
+          "credential_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Credential Ref"
+          },
+          "timeout_seconds": {
+            "default": 120,
+            "maximum": 600,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "title": "ModelConfig",
+        "type": "object"
+      },
+      "ParseLimits": {
+        "additionalProperties": false,
+        "properties": {
+          "parse_timeout_seconds": {
+            "default": 60,
+            "maximum": 60,
+            "minimum": 1,
+            "title": "Parse Timeout Seconds",
+            "type": "integer"
+          },
+          "parse_max_memory_bytes": {
+            "default": 268435456,
+            "maximum": 268435456,
+            "minimum": 1048576,
+            "title": "Parse Max Memory Bytes",
+            "type": "integer"
+          },
+          "xlsx_max_uncompressed_bytes": {
+            "default": 200000000,
+            "maximum": 200000000,
+            "minimum": 1,
+            "title": "Xlsx Max Uncompressed Bytes",
+            "type": "integer"
+          },
+          "parse_max_rows": {
+            "default": 100000,
+            "maximum": 100000,
+            "minimum": 1,
+            "title": "Parse Max Rows",
+            "type": "integer"
+          },
+          "text_max_chars": {
+            "default": 2000000,
+            "maximum": 2000000,
+            "minimum": 1,
+            "title": "Text Max Chars",
+            "type": "integer"
+          }
+        },
+        "title": "ParseLimits",
+        "type": "object"
+      },
+      "RuntimeBundle": {
+        "additionalProperties": false,
+        "properties": {
+          "auth": {
+            "$ref": "#/$defs/AuthConfig"
+          },
+          "model": {
+            "$ref": "#/$defs/ModelConfig",
+            "default": {
+              "api_url": "",
+              "model_id": "",
+              "credential_ref": null,
+              "timeout_seconds": 120
+            }
+          },
+          "tools": {
+            "$ref": "#/$defs/ToolsConfig",
+            "default": {
+              "sql_enabled": true,
+              "file_enabled": true,
+              "search_enabled": true,
+              "command_enabled": false,
+              "allowed_commands": [],
+              "sql_timeout_seconds": 30,
+              "command_timeout_seconds": 60,
+              "task_timeout_seconds": 600,
+              "cleanup_step_timeout_seconds": 60
+            }
+          },
+          "context": {
+            "$ref": "#/$defs/ContextConfig",
+            "default": {
+              "context_window_tokens": null,
+              "response_reserved_tokens": 4096,
+              "summary_trigger_ratio": 0.8,
+              "summary_max_tokens": 2048,
+              "recent_message_count": 10
+            }
+          },
+          "parse_limits": {
+            "$ref": "#/$defs/ParseLimits",
+            "default": {
+              "parse_timeout_seconds": 60,
+              "parse_max_memory_bytes": 268435456,
+              "xlsx_max_uncompressed_bytes": 200000000,
+              "parse_max_rows": 100000,
+              "text_max_chars": 2000000
+            }
+          },
+          "data_sources": {
+            "additionalProperties": {
+              "$ref": "#/$defs/SourceConfig"
+            },
+            "default": {},
+            "title": "Data Sources",
+            "type": "object"
+          }
+        },
+        "required": [
+          "auth"
+        ],
+        "title": "RuntimeBundle",
+        "type": "object"
+      },
+      "SourceConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Name",
+            "type": "string"
+          },
+          "credential_ref": {
+            "title": "Credential Ref",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "enabled",
+              "disabled",
+              "removed"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "credential_ref",
+          "status"
+        ],
+        "title": "SourceConfig",
+        "type": "object"
+      },
+      "ToolsConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "sql_enabled": {
+            "default": true,
+            "title": "Sql Enabled",
+            "type": "boolean"
+          },
+          "file_enabled": {
+            "default": true,
+            "title": "File Enabled",
+            "type": "boolean"
+          },
+          "search_enabled": {
+            "default": true,
+            "title": "Search Enabled",
+            "type": "boolean"
+          },
+          "command_enabled": {
+            "default": false,
+            "title": "Command Enabled",
+            "type": "boolean"
+          },
+          "allowed_commands": {
+            "default": [],
+            "items": {
+              "enum": [
+                "python_stats",
+                "text_search"
+              ],
+              "type": "string"
+            },
+            "title": "Allowed Commands",
+            "type": "array"
+          },
+          "sql_timeout_seconds": {
+            "default": 30,
+            "maximum": 600,
+            "minimum": 1,
+            "title": "Sql Timeout Seconds",
+            "type": "integer"
+          },
+          "command_timeout_seconds": {
+            "default": 60,
+            "maximum": 600,
+            "minimum": 1,
+            "title": "Command Timeout Seconds",
+            "type": "integer"
+          },
+          "task_timeout_seconds": {
+            "default": 600,
+            "maximum": 3600,
+            "minimum": 1,
+            "title": "Task Timeout Seconds",
+            "type": "integer"
+          },
+          "cleanup_step_timeout_seconds": {
+            "default": 60,
+            "maximum": 600,
+            "minimum": 1,
+            "title": "Cleanup Step Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "title": "ToolsConfig",
+        "type": "object"
+      }
+    },
+    "properties": {
+      "active_version": {
+        "title": "Active Version",
+        "type": "integer"
+      },
+      "pending_version": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Pending Version"
+      },
+      "edit_version": {
+        "title": "Edit Version",
+        "type": "integer"
+      },
+      "effective_config": {
+        "$ref": "#/$defs/RuntimeBundle"
+      },
+      "pending_config": {
+        "anyOf": [
+          {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Pending Config"
+      }
+    },
+    "required": [
+      "active_version",
+      "pending_version",
+      "edit_version",
+      "effective_config",
+      "pending_config"
+    ],
+    "title": "ConfigState",
+    "type": "object"
+  },
+  "RuntimeBundle": {
+    "$defs": {
+      "AuthConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "issuer_url": {
+            "title": "Issuer Url",
+            "type": "string"
+          },
+          "issuer_internal_url": {
+            "title": "Issuer Internal Url",
+            "type": "string"
+          },
+          "client_id": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Client Id",
+            "type": "string"
+          },
+          "callback_url": {
+            "title": "Callback Url",
+            "type": "string"
+          },
+          "credential_ref": {
+            "title": "Credential Ref",
+            "type": "string"
+          },
+          "role_claim": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Role Claim",
+            "type": "string"
+          },
+          "role_mapping": {
+            "additionalProperties": {
+              "enum": [
+                "analyst",
+                "admin"
+              ],
+              "type": "string"
+            },
+            "minProperties": 1,
+            "title": "Role Mapping",
+            "type": "object"
+          }
+        },
+        "required": [
+          "issuer_url",
+          "issuer_internal_url",
+          "client_id",
+          "callback_url",
+          "credential_ref",
+          "role_claim",
+          "role_mapping"
+        ],
+        "title": "AuthConfig",
+        "type": "object"
+      },
+      "ContextConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "context_window_tokens": {
+            "anyOf": [
+              {
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Context Window Tokens"
+          },
+          "response_reserved_tokens": {
+            "default": 4096,
+            "minimum": 1,
+            "title": "Response Reserved Tokens",
+            "type": "integer"
+          },
+          "summary_trigger_ratio": {
+            "default": 0.8,
+            "exclusiveMaximum": 1,
+            "exclusiveMinimum": 0,
+            "title": "Summary Trigger Ratio",
+            "type": "number"
+          },
+          "summary_max_tokens": {
+            "default": 2048,
+            "minimum": 1,
+            "title": "Summary Max Tokens",
+            "type": "integer"
+          },
+          "recent_message_count": {
+            "default": 10,
+            "maximum": 1000,
+            "minimum": 1,
+            "title": "Recent Message Count",
+            "type": "integer"
+          }
+        },
+        "title": "ContextConfig",
+        "type": "object"
+      },
+      "ModelConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "api_url": {
+            "default": "",
+            "title": "Api Url",
+            "type": "string"
+          },
+          "model_id": {
+            "default": "",
+            "maxLength": 200,
+            "title": "Model Id",
+            "type": "string"
+          },
+          "credential_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Credential Ref"
+          },
+          "timeout_seconds": {
+            "default": 120,
+            "maximum": 600,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "title": "ModelConfig",
+        "type": "object"
+      },
+      "ParseLimits": {
+        "additionalProperties": false,
+        "properties": {
+          "parse_timeout_seconds": {
+            "default": 60,
+            "maximum": 60,
+            "minimum": 1,
+            "title": "Parse Timeout Seconds",
+            "type": "integer"
+          },
+          "parse_max_memory_bytes": {
+            "default": 268435456,
+            "maximum": 268435456,
+            "minimum": 1048576,
+            "title": "Parse Max Memory Bytes",
+            "type": "integer"
+          },
+          "xlsx_max_uncompressed_bytes": {
+            "default": 200000000,
+            "maximum": 200000000,
+            "minimum": 1,
+            "title": "Xlsx Max Uncompressed Bytes",
+            "type": "integer"
+          },
+          "parse_max_rows": {
+            "default": 100000,
+            "maximum": 100000,
+            "minimum": 1,
+            "title": "Parse Max Rows",
+            "type": "integer"
+          },
+          "text_max_chars": {
+            "default": 2000000,
+            "maximum": 2000000,
+            "minimum": 1,
+            "title": "Text Max Chars",
+            "type": "integer"
+          }
+        },
+        "title": "ParseLimits",
+        "type": "object"
+      },
+      "SourceConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 200,
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Name",
+            "type": "string"
+          },
+          "credential_ref": {
+            "title": "Credential Ref",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "enabled",
+              "disabled",
+              "removed"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "credential_ref",
+          "status"
+        ],
+        "title": "SourceConfig",
+        "type": "object"
+      },
+      "ToolsConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "sql_enabled": {
+            "default": true,
+            "title": "Sql Enabled",
+            "type": "boolean"
+          },
+          "file_enabled": {
+            "default": true,
+            "title": "File Enabled",
+            "type": "boolean"
+          },
+          "search_enabled": {
+            "default": true,
+            "title": "Search Enabled",
+            "type": "boolean"
+          },
+          "command_enabled": {
+            "default": false,
+            "title": "Command Enabled",
+            "type": "boolean"
+          },
+          "allowed_commands": {
+            "default": [],
+            "items": {
+              "enum": [
+                "python_stats",
+                "text_search"
+              ],
+              "type": "string"
+            },
+            "title": "Allowed Commands",
+            "type": "array"
+          },
+          "sql_timeout_seconds": {
+            "default": 30,
+            "maximum": 600,
+            "minimum": 1,
+            "title": "Sql Timeout Seconds",
+            "type": "integer"
+          },
+          "command_timeout_seconds": {
+            "default": 60,
+            "maximum": 600,
+            "minimum": 1,
+            "title": "Command Timeout Seconds",
+            "type": "integer"
+          },
+          "task_timeout_seconds": {
+            "default": 600,
+            "maximum": 3600,
+            "minimum": 1,
+            "title": "Task Timeout Seconds",
+            "type": "integer"
+          },
+          "cleanup_step_timeout_seconds": {
+            "default": 60,
+            "maximum": 600,
+            "minimum": 1,
+            "title": "Cleanup Step Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "title": "ToolsConfig",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "auth": {
+        "$ref": "#/$defs/AuthConfig"
+      },
+      "model": {
+        "$ref": "#/$defs/ModelConfig",
+        "default": {
+          "api_url": "",
+          "model_id": "",
+          "credential_ref": null,
+          "timeout_seconds": 120
+        }
+      },
+      "tools": {
+        "$ref": "#/$defs/ToolsConfig",
+        "default": {
+          "sql_enabled": true,
+          "file_enabled": true,
+          "search_enabled": true,
+          "command_enabled": false,
+          "allowed_commands": [],
+          "sql_timeout_seconds": 30,
+          "command_timeout_seconds": 60,
+          "task_timeout_seconds": 600,
+          "cleanup_step_timeout_seconds": 60
+        }
+      },
+      "context": {
+        "$ref": "#/$defs/ContextConfig",
+        "default": {
+          "context_window_tokens": null,
+          "response_reserved_tokens": 4096,
+          "summary_trigger_ratio": 0.8,
+          "summary_max_tokens": 2048,
+          "recent_message_count": 10
+        }
+      },
+      "parse_limits": {
+        "$ref": "#/$defs/ParseLimits",
+        "default": {
+          "parse_timeout_seconds": 60,
+          "parse_max_memory_bytes": 268435456,
+          "xlsx_max_uncompressed_bytes": 200000000,
+          "parse_max_rows": 100000,
+          "text_max_chars": 2000000
+        }
+      },
+      "data_sources": {
+        "additionalProperties": {
+          "$ref": "#/$defs/SourceConfig"
+        },
+        "default": {},
+        "title": "Data Sources",
+        "type": "object"
+      }
+    },
+    "required": [
+      "auth"
+    ],
+    "title": "RuntimeBundle",
+    "type": "object"
+  }
+}

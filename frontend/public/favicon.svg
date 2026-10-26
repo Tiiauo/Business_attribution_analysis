@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="经营归因分析系统">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4c74ff"/>
+      <stop offset="0.55" stop-color="#2b50e2"/>
+      <stop offset="1" stop-color="#1e3cb4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="15.25" fill="none" stroke="#ffffff" stroke-opacity=".18"/>
+  <path d="M17 42.5V47M25 37v10M33 31.5V47M41 24.5V47" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M15 28.5 25.5 20l8 6.5L47 14" stroke="#9fe6d2" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

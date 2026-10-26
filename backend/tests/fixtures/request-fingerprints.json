@@ -1,0 +1,33 @@
+[
+  {
+    "input": {
+      "content": "  Why conversion fell?  ",
+      "data_source_id": "10"
+    },
+    "normalized": "{\"content\":\"Why conversion fell?\",\"data_source_id\":\"10\",\"task_kind\":\"analysis\",\"attachment_ids\":[]}",
+    "sha256": "b10400bf046abf3d4c3950e99f9abea715fb383d59825bfe41e86ef4e4569219"
+  },
+  {
+    "input": {
+      "content": " 漏斗📊 ",
+      "data_source_id": "demo",
+      "task_kind": "analysis",
+      "attachment_ids": [
+        "2",
+        "10",
+        "a"
+      ]
+    },
+    "normalized": "{\"content\":\"漏斗📊\",\"data_source_id\":\"demo\",\"task_kind\":\"analysis\",\"attachment_ids\":[\"10\",\"2\",\"a\"]}",
+    "sha256": "0242750e4834378444aeb34414b749ea5318994b160084bdc44fd87d6a8dbe8a"
+  },
+  {
+    "input": {
+      "content": "é",
+      "data_source_id": "s",
+      "task_kind": "final_report"
+    },
+    "normalized": "{\"content\":\"é\",\"data_source_id\":\"s\",\"task_kind\":\"final_report\",\"attachment_ids\":[]}",
+    "sha256": "cd0713e30cf413974c9066ba7dcde370f8cba9152455db5977c7ef99b8dd8a0c"
+  }
+]
